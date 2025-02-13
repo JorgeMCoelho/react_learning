@@ -18,10 +18,14 @@ export function Post(){
             </header>
 
             <div className={styles.content}>
-                <p>Hello all!!</p>
+                <p>Hello all!! 👋🏻</p>
                 <p>I've just made a post. This is a project of my react course. And I'm loving it</p>
-                <p> <a href="#">jorge.coelho/reactlearning</a></p>
-                <p><a href="#">#newproject #react #supercool</a></p>
+                <p> 👉🏻 <a href="#">jorge.coelho/reactlearning</a> 👈🏻</p>
+                <p>
+                    <a href="#">#newproject </a>
+                    <a href="#">#react </a>
+                    <a href="#">#supercool </a>
+                </p>
             </div>
 
         </article>
