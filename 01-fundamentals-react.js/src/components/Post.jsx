@@ -1,33 +1,51 @@
+import { format, formatDistanceToNow } from 'date-fns'; // documentation https://date-fns.org/v4.1.0/docs/format
+//import ptBR from 'date-fns/locale/pt-BR' -----> to translate the date into another language format
+
 import { Avatar } from './Avatar';
 import { Comment } from './Comment';
 
 import styles from './Post.module.css';
 
-export function Post(){
+// author: { avatar_url:"", name: "", role: ""}
+// publishedAt: Date
+// content: String
+
+// export function Post(props){} destructuring into ----> export function Post({author}) to remove the props.author.property ---> into author.property
+export function Post({ author, publishedAt, content }){
+    const publishedDateFormatted = format(publishedAt, "do LLLL 'at' HH:mm'h' ");
+    
+    /* translated date format
+    const publishedDateFormatted = format(publishedAt, "do LLLL 'at' HH:mm'h' ", {
+        locale: ptBR,
+    }); */
+
+    const publishDateRelativeToNow = formatDistanceToNow(publishedAt, {
+        addSuffix: true,
+    });
+
     return (
         <article className={styles.post}>
             <header>
                 <div className={styles.author}>
-                    <Avatar src="https://github.com/JorgeMCoelho.png" />
+                    <Avatar src={author.avatarUrl} />
                     <div className={styles.authorInfo}>
-                        <strong>Jorge Coelho</strong>
-                        <span>Web Developer</span>
+                        <strong>{author.name}</strong>
+                        <span>{author.role}</span>
 
                     </div>
                 </div>
 
-                <time title="13 feb 2025 at 14:15h" dateTime="2025-02-13 14:15:00"> Published 1 hour ago</time>
+                <time title={publishedDateFormatted} dateTime={publishedAt.toISOString()}> {publishDateRelativeToNow}</time>
             </header>
 
             <div className={styles.content}>
-                <p>Hello all!! 👋🏻</p>
-                <p>I've just made a post. This is a project of my react course. And I'm loving it</p>
-                <p> 👉🏻 <a href="#">jorge.coelho/reactlearning</a> 👈🏻</p>
-                <p>
-                    <a href="#">#newproject </a>
-                    <a href="#">#react </a>
-                    <a href="#">#supercool </a>
-                </p>
+                {content.map(line =>{
+                    if (line.type = 'paragraph'){
+                        return <p>{line.content}</p>
+                    } else if (line.type = 'link'){
+                        return <p><a href="#">{line.content}</a></p>
+                    }
+                })}
             </div>
 
             <form className={styles.commentForm}>
