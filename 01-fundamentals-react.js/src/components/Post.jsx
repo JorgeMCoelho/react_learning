@@ -14,9 +14,10 @@ import { useState } from 'react';
 // export function Post(props){} destructuring into ----> export function Post({author}) to remove the props.author.property ---> into author.property
 export function Post({ author, publishedAt, content }){
     const [comments, setComents] = useState([
-        1,
-        2,
+        'Really cool Post!',
     ]);
+
+    const [newCommentText, setNewCommentText] = useState('')
     
     const publishedDateFormatted = format(publishedAt, "do LLLL 'at' HH:mm'h' ");
     
@@ -32,8 +33,16 @@ export function Post({ author, publishedAt, content }){
 
     function handleCreateNewComment() {
         event.preventDefault();
+
+        const newCommentText = event.target.comment.value;
         
-        setComents([...comments, comments.length + 1]);
+        setComents([...comments, newCommentText]); // ...comments, copy the array, adds the new comment value to the array
+
+        setNewCommentText(''); //cleans the text area
+    }
+
+    function handleNewCommentChange() {
+        setNewCommentText(event.target.value);
     }
 
     return (
@@ -65,7 +74,10 @@ export function Post({ author, publishedAt, content }){
                 <strong>Leave your feedback</strong>
 
                 <textarea
+                    name='comment'
                     placeholder='Leave a comment'
+                    value={newCommentText}
+                    onChange={handleNewCommentChange}
                 />
                 
                 <footer>
@@ -75,7 +87,7 @@ export function Post({ author, publishedAt, content }){
 
             <div className={styles.commentList}>
                 {comments.map(comment => {
-                    return <Comment />
+                    return <Comment content={comment} />
                 })}
             </div>
         </article>
