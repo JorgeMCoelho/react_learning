@@ -5,6 +5,7 @@ import { Avatar } from './Avatar';
 import { Comment } from './Comment';
 
 import styles from './Post.module.css';
+import { useState } from 'react';
 
 // author: { avatar_url:"", name: "", role: ""}
 // publishedAt: Date
@@ -12,6 +13,11 @@ import styles from './Post.module.css';
 
 // export function Post(props){} destructuring into ----> export function Post({author}) to remove the props.author.property ---> into author.property
 export function Post({ author, publishedAt, content }){
+    const [comments, setComents] = useState([
+        1,
+        2,
+    ]);
+    
     const publishedDateFormatted = format(publishedAt, "do LLLL 'at' HH:mm'h' ");
     
     /* translated date format
@@ -22,6 +28,13 @@ export function Post({ author, publishedAt, content }){
     const publishDateRelativeToNow = formatDistanceToNow(publishedAt, {
         addSuffix: true,
     });
+
+
+    function handleCreateNewComment() {
+        event.preventDefault();
+        
+        setComents([...comments, comments.length + 1]);
+    }
 
     return (
         <article className={styles.post}>
@@ -48,7 +61,7 @@ export function Post({ author, publishedAt, content }){
                 })}
             </div>
 
-            <form className={styles.commentForm}>
+            <form onSubmit={handleCreateNewComment} className={styles.commentForm}>
                 <strong>Leave your feedback</strong>
 
                 <textarea
@@ -61,9 +74,9 @@ export function Post({ author, publishedAt, content }){
             </form>
 
             <div className={styles.commentList}>
-                <Comment />
-                <Comment />
-                <Comment />
+                {comments.map(comment => {
+                    return <Comment />
+                })}
             </div>
         </article>
     )
