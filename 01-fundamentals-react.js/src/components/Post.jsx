@@ -13,7 +13,7 @@ import { useState } from 'react';
 
 // export function Post(props){} destructuring into ----> export function Post({author}) to remove the props.author.property ---> into author.property
 export function Post({ author, publishedAt, content }){
-    const [comments, setComents] = useState([
+    const [comments, setComments] = useState([
         'Really cool Post!',
     ]);
 
@@ -36,13 +36,21 @@ export function Post({ author, publishedAt, content }){
 
         const newCommentText = event.target.comment.value;
         
-        setComents([...comments, newCommentText]); // ...comments, copy the array, adds the new comment value to the array
+        setComments([...comments, newCommentText]); // ...comments, copy the array, adds the new comment value to the array
 
         setNewCommentText(''); //cleans the text area
     }
 
     function handleNewCommentChange() {
         setNewCommentText(event.target.value);
+    }
+
+    function deleteComment(commentToDelete){
+        const commentsWithoutDeleted = comments.filter(comment => {
+            return comment !== commentToDelete;
+        })
+
+        setComments(commentsWithoutDeleted);
     }
 
     return (
@@ -87,7 +95,13 @@ export function Post({ author, publishedAt, content }){
 
             <div className={styles.commentList}>
                 {comments.map(comment => {
-                    return <Comment key={comment} content={comment} />
+                    return (
+                        <Comment 
+                            key={comment} 
+                            content={comment} 
+                            onDeleteComment={deleteComment}
+                        />
+                    )
                 })}
             </div>
         </article>
