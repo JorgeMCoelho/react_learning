@@ -33,8 +33,6 @@ export function Post({ author, publishedAt, content }){
 
     function handleCreateNewComment() {
         event.preventDefault();
-
-        const newCommentText = event.target.comment.value;
         
         setComments([...comments, newCommentText]); // ...comments, copy the array, adds the new comment value to the array
 
