@@ -1,7 +1,7 @@
 import { PlusCircle, ClipboardText } from 'phosphor-react';
 import { ChangeEvent, FormEvent, InvalidEvent, useState } from 'react';
 import styles from './TaskManager.module.css';
-import { Task, TaskType } from './Task';
+import { Task } from './Task';
 
 
 
@@ -19,9 +19,9 @@ export function TaskManager() {
           }
     ])
 
-    const [taskCreatedCounter, setTaskCreatedCounter] = useState(2);
+    const taskCreatedCounter= tasks.length;
 
-    const [taskCompletedCounter, setTaskCompletedCounter] = useState(0);
+    const taskCompletedCounter= tasks.filter(task => task.isCompleted).length;
 
     const [newTaskText, setNewTaskText] = useState('');
 
@@ -56,14 +56,21 @@ export function TaskManager() {
         return setTasks(taskWithoutDeleted);
     }
 
-    function completeTask(taskToComplete: boolean){
+    function toggleTask(taskToComplete: string){
+        const modifiedTasks = tasks.map(task => {
+            if(task.content === taskToComplete){
+                task.isCompleted = !task.isCompleted;
+            }
+            return task;
+        })
+        return setTasks(modifiedTasks);
     }
     
     return (
         <div className={styles.taskManager}>
             <form onSubmit={handleNewTask} className={styles.addTaskForm}>
                 <textarea 
-                    name=""
+                    name='Task'
                     placeholder='Add a new task' 
                     value={newTaskText}
                     onChange={handleNewTaskChange}
@@ -88,11 +95,11 @@ export function TaskManager() {
                         {tasks.map(tasks =>{
                             return (
                                 <Task
-                                    key={tasks.id}
+                                    key={tasks.content}
                                     content={tasks.content}
                                     isCompleted={tasks.isCompleted}
                                     onDeleteTask={deleteTask} 
-                                    onCompleteTask={completeTask}                          
+                                    onToggleTask={toggleTask}                          
                                 />
                             )
                         })} 

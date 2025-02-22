@@ -6,31 +6,30 @@ export interface TaskType {
     content: string;
     isCompleted: boolean;
     onDeleteTask: (taskToDelete: string) => void;
-    onCompleteTask: (taskToComplete: boolean) => void;
+    onToggleTask: (taskToComplete: string) => void;
 }
 
-export function Task({ content, isCompleted, onDeleteTask, onCompleteTask }: TaskType) {
+export function Task({ content, onDeleteTask, onToggleTask }: TaskType) {
     
     function handleDeleteTask(){
         onDeleteTask(content);
     }
 
-    function handleCompleteTask(){
-        onCompleteTask(isCompleted);
+    function handleToggleTask(){
+        onToggleTask(content);
     }
 
     return(
-        <form className={styles.task}>
+        <div className={styles.task}>
             <div className={styles.taskContent}>
-                <input onChange={handleCompleteTask} type='checkbox' />
+                <input onChange={handleToggleTask} type='checkbox' />
                 <label className={styles.taskDescription}>{content}</label>
             </div>
 
-            
             <button onClick={handleDeleteTask} title='Delete Task'>
                 <Trash size={24} />
             </button>
-        </form>
+        </div>
 
     )
 }
