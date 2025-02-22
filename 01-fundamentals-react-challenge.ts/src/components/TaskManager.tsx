@@ -32,6 +32,7 @@ export function TaskManager() {
 
                 <div className={styles.fullList}>
                     <Task />
+                    <Task />
                 </div>
             </div>
 
