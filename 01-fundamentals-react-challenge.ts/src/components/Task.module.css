@@ -17,7 +17,7 @@
     gap: 1rem;
 }
 
-.taskContent p{
+.taskContent label{
     font-size: 0.875rem;
 }
 
@@ -39,6 +39,12 @@
 .taskContent input[type="checkbox"]:checked{
     background: var(--purple-dark);
     border: none;
+}
+
+.taskContent input[type="checkbox"]:checked + label{
+    text-decoration: line-through;
+    color: var(--gray-300);
+
 }
 
 .taskContent input[type="checkbox"]::after{

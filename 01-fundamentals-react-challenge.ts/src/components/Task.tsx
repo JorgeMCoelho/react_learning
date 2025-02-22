@@ -7,7 +7,7 @@ export function Task() {
         <form className={styles.task}>
             <div className={styles.taskContent}>
                 <input type='checkbox' />
-                <p className={styles.taskDescription}>Task description</p>
+                <label className={styles.taskDescription}>Task description</label>
             </div>
 
             
