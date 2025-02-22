@@ -1,0 +1,39 @@
+.taskManager {
+    display: flex;
+    justify-content: center;
+}
+
+.addTaskForm{
+    width: 46rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: -1.6rem;
+}
+
+.addTaskForm textarea{
+    width: 100%;
+    background: var(--gray-500);
+    border: 1px solid var(--gray-700);
+    resize: none;
+    height: 3.375rem;
+    padding: 1rem;
+    border-radius: 8px;
+    color: var(--gray-100);
+    line-height: 1.4;
+}
+
+.addTaskForm button{
+    width: 9rem;
+    background: var(--blue-dark);
+    border: 0;
+    border-radius: 8px;
+    color: var(--gray-100);
+    gap: 1rem;
+    font-weight: bold;
+    padding: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
