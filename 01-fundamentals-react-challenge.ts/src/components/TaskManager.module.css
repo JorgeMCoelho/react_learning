@@ -1,12 +1,12 @@
 .taskManager {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .addTaskForm{
-    width: 46rem;
     display: flex;
-    justify-content: center;
+    width: 46rem;
     gap: 0.5rem;
     margin-top: -1.6rem;
 }
@@ -21,19 +21,70 @@
     border-radius: 8px;
     color: var(--gray-100);
     line-height: 1.4;
+    overflow: hidden;
 }
 
 .addTaskForm button{
-    width: 9rem;
+    width: 11rem;
     background: var(--blue-dark);
     border: 0;
     border-radius: 8px;
     color: var(--gray-100);
     gap: 1rem;
     font-weight: bold;
+    font-size: 0.875rem;
     padding: 1rem;
 
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.addTaskForm button:hover{
+    background: var(--blue);
+}
+
+.tasksInfo{
+    display: flex;
+    width: 46rem;
+    margin-top: 4rem;
+    gap:10rem;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.tasksCompleted{
+    color: var(--purple);
+    font-size: 0.875rem;
+}
+
+.tasksCreated{
+    color: var(--blue);
+    font-size: 0.875rem;
+}
+
+
+.taskCounter{
+    background: var(--gray-400);
+    color: var(--gray-200);
+    padding: 0.12rem 0.5rem;
+    border-radius: 99px;
+
+}
+
+.taskList{
+    width: 46rem;
+    border-top: 1px solid var(--gray-400);
+}
+
+.emptyList{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4rem;
+    color: var(--gray-300);
+}
+
+.emptyList strong{
+    margin-top: 1rem;
 }
