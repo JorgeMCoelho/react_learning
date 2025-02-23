@@ -1,6 +1,6 @@
 .task{
     display: flex;
-    width: 46rem;
+    width: 100%;
     justify-content: space-between;
     background: var(--gray-500);
     padding: 1rem;
