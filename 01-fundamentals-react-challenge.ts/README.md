@@ -1,7 +1,7 @@
-# 🚀 Learning React Fundamentals  -> Rocketseat
+# 🚀 Learning React Fundamentals  -> Challenge -> Rocketseat
 
 This is a follow along project to learn the fundamentals of React
 
-- Learning state, props, and event handling
+– Practicing state, props, and event handling
 
-Projected deployed : https://react-learning-silk.vercel.app/
+Projected deployed : https://01-fundamentals-challenge.vercel.app/
