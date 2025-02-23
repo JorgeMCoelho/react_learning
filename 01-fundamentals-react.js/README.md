@@ -1,8 +1,7 @@
-# React + Vite
+# 🚀 Learning React Fundamentals  -> Rocketseat
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a follow along project to learn the fundamentals of React
 
-Currently, two official plugins are available:
+- Learning state, props, and event handling
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Projected deployed : https://react-learning-silk.vercel.app/
