@@ -20,7 +20,7 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`   //styled.b
     border: 0;
     margin: 8px;
 
-    background-color: ${props => props.theme.primary}; // here we are using the theme from the default.ts file
+    background-color: ${props => props.theme['green-500']}; // here we are using the theme from the default.ts file
     color: ${props => props.theme.white};
 /*
     ${props => {
