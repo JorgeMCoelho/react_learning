@@ -62,3 +62,29 @@ export const HistoryList = styled.div`
     }
 
 `
+
+const STATUS_COLORS = {
+  yellow: 'yellow-500',
+  green: 'green-500',
+  red: 'red-500',
+
+} as const // as const tells that the properties are locked and won't change
+
+interface StatusProps {
+  statusColor: keyof typeof STATUS_COLORS
+}
+
+export const Status = styled.span<StatusProps>`
+    display:flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    &::before{ // this will show before the content
+        content:''; // we need to use this tag even if
+                    //it is empty, to show up on the screen
+        width:0.5rem;
+        height: 0.5rem;
+        border-radius: 9999px;
+        background: ${(props) => props.theme[STATUS_COLORS[props.statusColor]]};
+    }
+`
