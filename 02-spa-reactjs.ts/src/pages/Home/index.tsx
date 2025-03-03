@@ -12,6 +12,7 @@ import {
   Separator,
   StartCountdownButton,
 } from './styles'
+import { useState } from 'react'
 
 export function Home() {
   const newCycleFormValidationSchema = zod.object({
@@ -28,6 +29,15 @@ export function Home() {
   }
   */
 
+  interface Cycle {
+    id: string;
+    task: string;
+    minutesAmount: number
+  }
+
+  const [cycles, setCycles] = useState<Cycle[]>([])
+  const [activeCycleId, setActiveCycleId] = useState<string | null>(null)
+
   type NewCycleFormData = zod.infer<typeof newCycleFormValidationSchema>
 
   const { register, handleSubmit, watch, reset } = useForm<NewCycleFormData>({
@@ -38,8 +48,20 @@ export function Home() {
     },
   })
 
+  const activeCycle = cycles.find(cycle => cycle.id === activeCycleId)
+
   function handleCreateNewCycle(data:NewCycleFormData) {
-    console.log(data)
+    const id = String(new Date().getTime()),
+
+    const newCyle: Cycle = {
+      id,
+      task: data.task,
+      minutesAmount: data.minutesAmount,
+    }
+
+    setCycles((state) => [...state, newCyle])
+    setActiveCycleId(id)
+
     reset()
   }
 
