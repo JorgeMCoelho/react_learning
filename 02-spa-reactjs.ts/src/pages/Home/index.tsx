@@ -2,6 +2,7 @@ import { Play } from 'phosphor-react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as zod from 'zod'
+import { differenceInSeconds } from 'date-fns'
 
 import {
   CountdownContainer,
@@ -12,7 +13,7 @@ import {
   Separator,
   StartCountdownButton,
 } from './styles'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export function Home() {
   const newCycleFormValidationSchema = zod.object({
@@ -33,6 +34,7 @@ export function Home() {
     id: string;
     task: string;
     minutesAmount: number
+    startDate: Date
   }
 
   const [cycles, setCycles] = useState<Cycle[]>([])
@@ -50,6 +52,16 @@ export function Home() {
   })
 
   const activeCycle = cycles.find(cycle => cycle.id === activeCycleId)
+
+  useEffect(() => {
+    if (activeCycle) {
+      setInterval(() => {
+        setAmountSecondsPassed(differenceInSeconds(new Date(),
+          activeCycle.startDate),
+        )
+      }, 1000)
+    }
+  }, [activeCycle])
 
   const totalSeconds = activeCycle
     ? activeCycle.minutesAmount * 60
@@ -72,6 +84,7 @@ export function Home() {
       id,
       task: data.task,
       minutesAmount: data.minutesAmount,
+      startDate: new Date(),
     }
 
     setCycles((state) => [...state, newCyle])
