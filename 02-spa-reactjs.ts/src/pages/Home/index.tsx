@@ -15,6 +15,8 @@ import {
   StopCountdownButton,
 } from './styles'
 import { useEffect, useState } from 'react'
+import { NewCycleForm } from './components/NewCycleForm'
+import { Countdown } from './components/Countdown'
 
 export function Home() {
   const newCycleFormValidationSchema = zod.object({
@@ -23,13 +25,6 @@ export function Home() {
       .min(5, 'Min time is 5 minutes')
       .max(60, 'Max time is 60 minutes'),
   })
-
-  /*
-  interface NewCycleFormData {
-    task: string;
-    minutesAmount: number
-  }
-  */
 
   interface Cycle {
     id: string;
@@ -145,45 +140,9 @@ export function Home() {
   return (
     <HomeContainer>
       <form onSubmit={handleSubmit(handleCreateNewCycle)} action="">
-        <FormContainer>
-          <label htmlFor="">I'm working on</label>
-          <TaskInput
-            id="text"
-            list="task-suggestions"
-            placeholder="Name of your project"
-            disabled={!!activeCycle}
-            {...register('task')}
 
-          />
-
-          <datalist id="task-suggestions">
-            <option value="Project 1" />
-            <option value="Project 2" />
-            <option value="Project 3" />
-          </datalist>
-
-          <label htmlFor="">during</label>
-          <MinutesAmountInput
-            type="number"
-            id="minutesAmount"
-            placeholder="00"
-            step={5}
-            min={5}
-            max={60}
-            disabled={!!activeCycle}
-            {...register('minutesAmount', { valueAsNumber: true })}
-          />
-
-          <span>minutes.</span>
-        </FormContainer>
-
-        <CountdownContainer>
-          <span>{minutes[0]}</span>
-          <span>{minutes[1]}</span>
-          <Separator>:</Separator>
-          <span>{seconds[0]}</span>
-          <span>{seconds[1]}</span>
-        </CountdownContainer>
+        <NewCycleForm />
+        <Countdown />
 
         {activeCycle
           ? (
