@@ -5,12 +5,7 @@ import * as zod from 'zod'
 import { differenceInSeconds } from 'date-fns'
 
 import {
-  CountdownContainer,
-  FormContainer,
   HomeContainer,
-  TaskInput,
-  MinutesAmountInput,
-  Separator,
   StartCountdownButton,
   StopCountdownButton,
 } from './styles'
@@ -19,13 +14,6 @@ import { NewCycleForm } from './components/NewCycleForm'
 import { Countdown } from './components/Countdown'
 
 export function Home() {
-  const newCycleFormValidationSchema = zod.object({
-    task: zod.string().min(1, 'Write your task'),
-    minutesAmount: zod.number()
-      .min(5, 'Min time is 5 minutes')
-      .max(60, 'Max time is 60 minutes'),
-  })
-
   interface Cycle {
     id: string;
     task: string;
@@ -37,56 +25,8 @@ export function Home() {
 
   const [cycles, setCycles] = useState<Cycle[]>([])
   const [activeCycleId, setActiveCycleId] = useState<string | null>(null)
-  const [amountSecondsPassed, setAmountSecondsPassed] = useState(0)
-
-  type NewCycleFormData = zod.infer<typeof newCycleFormValidationSchema>
-
-  const { register, handleSubmit, watch, reset } = useForm<NewCycleFormData>({
-    resolver: zodResolver(newCycleFormValidationSchema),
-    defaultValues: {
-      task: '',
-      minutesAmount: 0,
-    },
-  })
 
   const activeCycle = cycles.find(cycle => cycle.id === activeCycleId)
-
-  const totalSeconds = activeCycle
-    ? activeCycle.minutesAmount * 60
-    : 0
-
-  useEffect(() => {
-    let interval: number
-
-    if (activeCycle) {
-      interval = setInterval(() => {
-        const secondsDifference = differenceInSeconds(
-          new Date(),
-          activeCycle.startDate,
-        )
-        if (secondsDifference >= totalSeconds) {
-          setCycles((state) =>
-            state.map((cycle) => {
-              if (cycle.id === activeCycleId) {
-                return { ...cycle, finishedDate: new Date() }
-              } else {
-                return cycle
-              }
-            }),
-          )
-
-          setAmountSecondsPassed(totalSeconds)
-          clearInterval(interval)
-        } else {
-          setAmountSecondsPassed(secondsDifference)
-        }
-      }, 1000)
-    }
-
-    return () => {
-      clearInterval(interval)
-    }
-  }, [activeCycle, totalSeconds, activeCycleId])
 
   const currentSeconds = activeCycle
     ? totalSeconds - amountSecondsPassed
@@ -142,7 +82,7 @@ export function Home() {
       <form onSubmit={handleSubmit(handleCreateNewCycle)} action="">
 
         <NewCycleForm />
-        <Countdown />
+        <Countdown activeCycle={activeCycle} setCycles={setCycles} activeCycleId={activeCycleId} />
 
         {activeCycle
           ? (
