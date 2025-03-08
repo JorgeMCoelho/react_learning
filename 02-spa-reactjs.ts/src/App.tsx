@@ -4,14 +4,10 @@ import { Router } from './Router'
 
 import { defaultTheme } from './styles/themes/default'
 import { GlobalStyle } from './styles/global'
-import { HomeApiContext } from './HomeApiContext'
 
 export function App() {
-  return <HomeApiContext />
-
-/*
   return (
-  <ThemeProvider theme={defaultTheme}>
+    <ThemeProvider theme={defaultTheme}>
       <BrowserRouter>
         <Router />
       </BrowserRouter>
@@ -19,5 +15,4 @@ export function App() {
       <GlobalStyle />
     </ThemeProvider>
   )
-*/
 }
