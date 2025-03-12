@@ -9,10 +9,6 @@ export function History() {
     <HistoryContainer>
       <h1>History</h1>
 
-      <pre>
-        {JSON.stringify(cycles, null, 2)}
-      </pre>
-
       <HistoryList>
         <table>
           <thead>
@@ -24,30 +20,28 @@ export function History() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Task 1</td>
-              <td>20 mins</td>
-              <td>2 months ago</td>
-              <td>
-                <Status statusColor="green">Finished</Status>
-              </td>
-            </tr>
-            <tr>
-              <td>Task 2</td>
-              <td>20 mins</td>
-              <td>2 months ago</td>
-              <td>
-                <Status statusColor="yellow">In progress</Status>
-              </td>
-            </tr>
-            <tr>
-              <td>Task 3</td>
-              <td>20 mins</td>
-              <td>2 months ago</td>
-              <td>
-                <Status statusColor="red">Cancelled</Status>
-              </td>
-            </tr>
+            {cycles.map(cycle => {
+              return (
+                <tr key={cycle.id}>
+                <td>{cycle.task}</td>
+                <td>{cycle.minutesAmount} minutes</td>
+                <td>{cycle.startDate.toISOString()}</td>
+                <td>
+                  { cycle.finishedDate && (
+                    <Status statusColor="green">Finished</Status>
+                  )}
+
+                  { cycle.interruptedDate && (
+                    <Status statusColor="red">Interrupted</Status>
+                  )}
+
+                  { (!cycle.finishedDate && !cycle.interruptedDate) && (
+                    <Status statusColor="yellow">In progress</Status>
+                  )}                  
+                </td>
+              </tr>
+              )
+            })}
           </tbody>
         </table>
 
