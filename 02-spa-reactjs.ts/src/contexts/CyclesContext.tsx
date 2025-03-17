@@ -1,4 +1,5 @@
-import { createContext, ReactNode, useState } from 'react'
+import { createContext, ReactNode, useState, useReducer } from 'react'
+import { NewCycleForm } from '../pages/Home/components/NewCycleForm';
 
 interface CreateCycleData {
   task: string;
@@ -35,7 +36,17 @@ interface CyclesContextProviderProps {
 export function CyclesContextProvider({
   children,
 }: CyclesContextProviderProps) {
-  const [cycles, setCycles] = useState<Cycle[]>([])
+  const [cycles, dispatch] = useReducer((state: Cycle[], action: any) => {
+    
+    if (action.type === 'ADD_NEW_CYCLE') {
+      return [...state, action.payload.newCycle]
+    }
+
+    return state
+  }, [])
+
+
+
   const [activeCycleId, setActiveCycleId] = useState<string | null>(null)
   const [amountSecondsPassed, setAmountSecondsPassed] = useState(0)
 
@@ -46,6 +57,14 @@ export function CyclesContextProvider({
   }
 
   function markCurrentCycleAsFinished() {
+    dispatch({
+      type: 'MARK_CURRENT_CYCLE_AS_FINISHED',
+      payload: {
+        activeCycleId,
+      }
+    })
+
+    /*
     setCycles((state) =>
       state.map((cycle) => {
         if (cycle.id === activeCycleId) {
@@ -55,24 +74,40 @@ export function CyclesContextProvider({
         }
       }),
     )
+    */
   }
 
   function createNewCycle(data:CreateCycleData) {
     const id = String(new Date().getTime())
 
-    const newCyle: Cycle = {
+    const newCycle: Cycle = {
       id,
       task: data.task,
       minutesAmount: data.minutesAmount,
       startDate: new Date(),
     }
 
-    setCycles((state) => [...state, newCyle])
+    dispatch({
+      type: 'ADD_NEW_CYCLE',
+      payload: {
+        newCycle,
+      }
+    })
+
+    //setCycles((state) => [...state, newCyle])
     setActiveCycleId(id)
     setAmountSecondsPassed(0)
   }
 
   function interruptCurrentCycle() {
+    dispatch({
+      type: 'INTERRUPT_CURRENT_CYCLE',
+      payload: {
+        activeCycleId,
+      }
+    })
+
+    /*
     setCycles((state) =>
       state.map((cycle) => {
         if (cycle.id === activeCycleId) {
@@ -81,7 +116,7 @@ export function CyclesContextProvider({
           return cycle
         }
       }),
-    )
+    ) */
     setActiveCycleId(null)
   }
 
