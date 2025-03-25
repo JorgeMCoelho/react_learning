@@ -24,7 +24,7 @@ export const defaultTheme = {
 
     typography: {
         fonts: {
-            primary: "Baloo 2, cursive",
+            primary: "Baloo 2",
             secondary: "Roboto, sans-serif",
         },
         titleXl:{

@@ -19,8 +19,14 @@ export const HomeContainer = styled.main`
 
 export const IntroContainer = styled.div`
     display: flex;
-    gap: 60px;
+    gap: 3.75rem;
 
     margin-top: 5.75rem;
+`
 
+export const IntroContainerText = styled.div`
+    display: flex;
+    gap: 1rem;
+
+    flex-direction: column;
 `
