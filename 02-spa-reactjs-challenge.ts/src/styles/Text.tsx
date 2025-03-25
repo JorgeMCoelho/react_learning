@@ -12,10 +12,10 @@ export const Text = styled.p<TextProps>`
     const typography = theme.typography[variant as TypographyVariant];
  
     return `
-    font-size: ${typography.size};
+      font-size: ${typography.size};
       font-weight: ${typography.weight};
       line-height: ${typography.lineHeight};
-      font-family: ${theme.typography.fonts[typography.family]},
+      font-family: ${theme.typography.fonts[typography.family]}
 
       `
   }}
