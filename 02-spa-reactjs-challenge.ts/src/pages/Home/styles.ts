@@ -23,6 +23,4 @@ export const IntroContainer = styled.div`
 
     margin-top: 5.75rem;
 
-    h1{
-        font-size: 3rem;}
 `

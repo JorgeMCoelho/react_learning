@@ -30,8 +30,76 @@ export const defaultTheme = {
         titleXl:{
             size:"3rem",
             lineHeight:"130%",
-            weight: "800",
+            weight: "extraBold",
             family: "primary",
+        },
+        titleL:{
+            size:"2rem",
+            lineHeight:"130%",
+            weight:"extraBold",
+            family:"primary",
+        },
+        titleM:{
+            size:"1.5rem",
+            lineHeight:"130%",
+            weight:"extraBold",
+            family:"primary",
+        },
+        titleS:{
+            size:"1.25",
+            lineHeight:"130%",
+            weight:"bold",
+            family:"primary",
+        },
+        titleXs:{
+            size:"1.125rem",
+            lineHeight:"130%",
+            weight:"bold",
+            family:"primary",
+        },
+        textL:{
+            size:"1.25rem",
+            lineHeight:"130%",
+            weight:"semiBold",
+            family:"secondary",
+        },
+        textM:{
+            size:"1rem",
+            lineHeight:"130%",
+            weight:"semiBold",
+            family:"secondary",
+        },
+        textS:{
+            size:"0.875rem",
+            lineHeight:"130%",
+            weight:"regular",
+            family:"secondary",
+        },
+        textXs:{
+            size:"0.75rem",
+            lineHeight:"130%",
+            weight:"bold",
+            family:"secondary",
+        },
+        tag:{
+            size:"0.625rem",
+            lineHeight:"130%",
+            weight:"bold",
+            family:"secondary",
+        },
+        buttonG:{
+            size:"0.875rem",
+            lineHeight:"160%",
+            weight:"bold",
+            family:"secondary",
+        },
+        buttonM:{
+            size:"0.75rem",
+            lineHeight:"160%",
+            weight:"regular",
+            family:"secondary",
         }
+            
+        
     }
 } as const;
