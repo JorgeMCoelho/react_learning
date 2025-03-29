@@ -30,3 +30,40 @@ export const IntroContainerText = styled.div`
 
     flex-direction: column;
 `
+
+export const Reasons = styled.td`
+    display: flex;
+    align-items: center;
+    height: 2rem;
+    gap: 8px;
+
+     svg {
+        color: ${(props) => props.theme.colors['white']};
+        border-radius: 1000px;
+        padding: 8px;
+     }
+
+
+`
+
+export const ReasonOne = styled(Reasons)`
+    svg {
+        background-color: ${props => props.theme.colors['yellow-dark']};
+    }
+    `
+export const ReasonTwo = styled(Reasons)`
+    svg {
+        background-color: ${props => props.theme.colors['base-text']};
+    }
+`
+
+export const ReasonThree = styled(Reasons)`
+    svg {
+        background-color: ${props => props.theme.colors['yellow']};
+    }
+`
+export const ReasonFour = styled(Reasons)`
+    svg {
+        background-color: ${props => props.theme.colors['purple']};
+    }
+`
