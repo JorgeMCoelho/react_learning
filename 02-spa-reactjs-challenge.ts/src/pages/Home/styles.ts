@@ -34,7 +34,6 @@ export const IntroContainerText = styled.div`
 export const ReasonsRow = styled.tr`
     display: flex;
     flex-direction: row;
-    gap: 40px;
     margin-bottom: 1.25rem;
 `
 
