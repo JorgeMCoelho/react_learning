@@ -31,38 +31,45 @@ export const IntroContainerText = styled.div`
     flex-direction: column;
 `
 
-export const Reasons = styled.td`
+export const ReasonsRow = styled.tr`
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    margin-bottom: 1.25rem;
+`
+
+export const ReasonsCell = styled.td`
     display: flex;
     align-items: center;
     height: 2rem;
+    width: 19rem;
     gap: 8px;
+    justify-content: left;
 
      svg {
         color: ${(props) => props.theme.colors['white']};
         border-radius: 1000px;
         padding: 8px;
      }
-
-
 `
 
-export const ReasonOne = styled(Reasons)`
+export const ReasonOne = styled(ReasonsCell)`
     svg {
         background-color: ${props => props.theme.colors['yellow-dark']};
     }
     `
-export const ReasonTwo = styled(Reasons)`
+export const ReasonTwo = styled(ReasonsCell)`
     svg {
         background-color: ${props => props.theme.colors['base-text']};
     }
 `
 
-export const ReasonThree = styled(Reasons)`
+export const ReasonThree = styled(ReasonsCell)`
     svg {
         background-color: ${props => props.theme.colors['yellow']};
     }
 `
-export const ReasonFour = styled(Reasons)`
+export const ReasonFour = styled(ReasonsCell)`
     svg {
         background-color: ${props => props.theme.colors['purple']};
     }
