@@ -18,7 +18,6 @@ export const HomeContainer = styled.main`
 export const IntroContainer = styled.div`
     display: flex;
     gap: 3.75rem;
-
     padding-top: 5.75rem;
     background: url(${backgroundHeroSection}) no-repeat center center;
     background-size: cover;
@@ -45,6 +44,7 @@ export const ReasonsCell = styled.td`
     gap: 8px;
     justify-content: left;
 
+    
      svg {
         color: ${(props) => props.theme.colors['white']};
         border-radius: 1000px;
