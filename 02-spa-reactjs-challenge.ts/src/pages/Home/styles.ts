@@ -21,8 +21,9 @@ export const HomeContainer = styled.main`
 export const IntroContainer= styled.div`
     display: flex;
     gap: 3.75rem;
-    padding-top: 5.75rem;
     max-width: 80rem;
+    height: 34rem;
+    align-items: center;
 
   }
 `
