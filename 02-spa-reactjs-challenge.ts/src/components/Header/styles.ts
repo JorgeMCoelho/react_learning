@@ -1,9 +1,18 @@
 import styled from 'styled-components'
 
+export const HeaderWrapper = styled.div`
+    max-width: 80rem;
+    display: flex;
+    justify-content: center;
+    margin: 2rem auto;
+    width: 100%;
+`
+
 export const HeaderContainer = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
 
     nav{
     display: flex;

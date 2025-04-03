@@ -9,18 +9,22 @@ export const HomeContainer = styled.main`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    background: url(${backgroundHeroSection}) no-repeat center center;
+    background-size: cover;
+
     table{
         margin-top: 4.125rem;
     }
     `
-
-    //Please need to fix the background
-export const IntroContainer = styled.div`
+    
+export const IntroContainer= styled.div`
     display: flex;
     gap: 3.75rem;
     padding-top: 5.75rem;
-    background: url(${backgroundHeroSection}) no-repeat center center;
-    background-size: cover;
+    max-width: 80rem;
+
+  }
 `
 
 export const IntroContainerText = styled.div`
@@ -44,7 +48,6 @@ export const ReasonsCell = styled.td`
     gap: 8px;
     justify-content: left;
 
-    
      svg {
         color: ${(props) => props.theme.colors['white']};
         border-radius: 1000px;
