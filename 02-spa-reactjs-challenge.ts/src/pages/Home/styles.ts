@@ -2,29 +2,34 @@ import styled from "styled-components";
 import backgroundHeroSection from '../../assets/BackgroundHeroSection.svg';
 
 export const HomeContainer = styled.main`
-    height: 100%;
-    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    `
+export const IntroContainerBackground = styled.div`
+
+    background: url(${backgroundHeroSection}) no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    height: 35rem;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    background: url(${backgroundHeroSection}) no-repeat center center;
-    background-size: cover;
-
-    table{
-        margin-top: 4.125rem;
-    }
-    `
+    
+`   
     
 export const IntroContainer= styled.div`
     display: flex;
     gap: 3.75rem;
     max-width: 80rem;
-    height: 34rem;
     align-items: center;
 
+    table{
+        margin-top: 4.125rem;
+    }
   }
 `
 
@@ -76,4 +81,12 @@ export const ReasonFour = styled(ReasonsCell)`
     svg {
         background-color: ${props => props.theme.colors['purple']};
     }
+`
+
+export const CoffeeCardContainer = styled.div`
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    max-width: 80rem;
+    gap: 2rem;
 `
