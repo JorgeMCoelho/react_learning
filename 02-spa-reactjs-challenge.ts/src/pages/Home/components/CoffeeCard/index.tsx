@@ -1,5 +1,5 @@
 import coffee from '../../../../assets/Coffee.svg'
-import { CoffeeActions, CoffeeBuyContainer, CoffeeCardWrapper, CoffeeCategory, CoffeeDescription } from './styles'
+import { CoffeActionsPlusAndMinus, CoffeeActions, CoffeeBuyContainer, CoffeeCardWrapper, CoffeeCategory, CoffeeDescription } from './styles'
 import { Text } from "../../../../styles/Text"
 import { Minus, Plus, ShoppingCart } from "phosphor-react"
 
@@ -21,9 +21,11 @@ export function CoffeeCard() {
             <CoffeeBuyContainer>
                 2.00 €
                 <CoffeeActions>
-                    <Minus size={14} />
-                    1
-                    <Plus size={14} />
+                    <CoffeActionsPlusAndMinus>
+                        <Minus size={14} />
+                        1
+                        <Plus size={14} />
+                    </CoffeActionsPlusAndMinus>
                     <button>
                         <ShoppingCart size={22} weight="fill" />
                     </button>

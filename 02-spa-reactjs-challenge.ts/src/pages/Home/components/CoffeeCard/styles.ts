@@ -43,6 +43,7 @@ export const CoffeeActions = styled.div`
         align-items: center;
         justify-content: center;
         flex-direction: row;   
+        gap: 0.5rem;
 
     svg {
         color: ${props => props.theme.colors['purple']};
@@ -65,3 +66,15 @@ export const CoffeeActions = styled.div`
         }
     }
 `
+export const CoffeActionsPlusAndMinus = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.5rem;
+    background-color: ${props => props.theme.colors['base-button']};
+    gap: 0.25rem;
+
+    border-radius: 6px;
+    
+` 
