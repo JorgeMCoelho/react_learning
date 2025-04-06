@@ -60,19 +60,19 @@ export const defaultTheme = {
         textL:{
             size:"1.25rem",
             lineHeight:"130%",
-            weight:"600",
+            weight:"400",
             family:"secondary",
         },
         textM:{
             size:"1rem",
             lineHeight:"130%",
-            weight:"600",
+            weight:"400",
             family:"secondary",
         },
         textS:{
             size:"0.875rem",
             lineHeight:"130%",
-            weight:"500",
+            weight:"400",
             family:"secondary",
         },
         textXs:{
