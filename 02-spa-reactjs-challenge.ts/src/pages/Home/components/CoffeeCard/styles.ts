@@ -57,14 +57,21 @@ export const CoffeeActions = styled.div`
         height: 2.375rem;
         width: 2.375rem;
         border-radius: 6px;
+        border: 3px solid transparent;
 
         display: flex;
         align-items: center;
         justify-content: center;
 
+        &:hover {
+            background-color: ${(props) => props.theme.colors['purple']};
+        }
+
         svg{
             color: ${props => props.theme.colors['base-card']};
         }
+
+
     }
 `
 export const CoffeActionsPlusAndMinus = styled.div`
