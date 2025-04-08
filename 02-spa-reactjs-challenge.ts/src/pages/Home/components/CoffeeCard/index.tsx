@@ -19,7 +19,7 @@ export function CoffeeCard() {
             </CoffeeDescription>
 
             <CoffeeBuyContainer>
-                2.00 €
+               <Text variant="titleM"> 2.00</Text><Text variant="textS"> €</Text>
                 <CoffeeActions>
                     <CoffeActionsPlusAndMinus>
                         <Minus size={14} />
