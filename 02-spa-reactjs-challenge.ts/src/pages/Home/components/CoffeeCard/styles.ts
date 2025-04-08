@@ -48,6 +48,10 @@ export const CoffeeActions = styled.div`
 
     svg {
         color: ${props => props.theme.colors['purple']};
+
+        &:hover {
+            color: ${(props) => props.theme.colors['purple-dark']};
+        }
     }
 
     button {
@@ -69,6 +73,10 @@ export const CoffeeActions = styled.div`
 
         svg{
             color: ${props => props.theme.colors['base-card']};
+            
+            &:hover {
+                color: ${(props) => props.theme.colors['base-card']};
+            }
         }
 
 
