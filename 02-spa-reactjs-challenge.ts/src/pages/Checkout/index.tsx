@@ -38,6 +38,19 @@ export function Checkout(){
             </div>
             <div>
                  <h1>Selected Coffees</h1>
+                 <h1>Coffee Card here</h1>
+                 <div>
+                    <h3>Subtotal</h3>
+                    <h3>29,00€</h3>
+                 </div>
+                 <div>
+                    <h3>Delivery fee</h3>
+                    <h3>3,00€</h3>
+                 </div>
+                 <div>
+                    <h3>Order Total</h3>
+                    <h3>32,00€</h3>
+                 </div>
             </div>
         </div>
 
