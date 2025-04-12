@@ -1,10 +1,12 @@
+import { AdressInfoContainer, CheckoutCompleteOrderContainer, CheckoutContainer } from "./styles";
+
+
 export function Checkout(){
     return(
-        <div>
-            
-            <div>
+        <CheckoutContainer>
+            <CheckoutCompleteOrderContainer>
                 <h1>Complete your Order</h1>
-                <div>
+                <AdressInfoContainer>
                     <h1>Delivery Address</h1>
                     <h3>Enter the address where you want to receive your order</h3>
                     <form action="">
@@ -34,8 +36,8 @@ export function Checkout(){
                             </label>
                         </form>
                     </div>
-                </div>
-            </div>
+                </AdressInfoContainer>
+            </CheckoutCompleteOrderContainer>
             <div>
                  <h1>Selected Coffees</h1>
                  <h1>Coffee Card here</h1>
@@ -50,9 +52,9 @@ export function Checkout(){
                  <div>
                     <h3>Order Total</h3>
                     <h3>32,00€</h3>
+                    <button>Submit Order</button>
                  </div>
             </div>
-        </div>
-
+        </CheckoutContainer>
     )
 }
