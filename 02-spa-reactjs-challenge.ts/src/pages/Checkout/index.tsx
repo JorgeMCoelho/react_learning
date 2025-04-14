@@ -1,3 +1,4 @@
+import { Text } from "../../styles/Text";
 import { AdressInfoContainer, CheckoutCompleteOrderContainer, CheckoutWrapper, PaymentInfoContainer, SelectedCoffeesContainer } from "./styles";
 
 import { Bank, CreditCard, CurrencyEur, MapPinLine, Money } from "phosphor-react"
@@ -7,12 +8,12 @@ export function Checkout(){
     return(
         <CheckoutWrapper>
             <div>
-                <h1>Complete your Order</h1>
+                <Text variant="titleXs">Complete your Order</Text>
                 <CheckoutCompleteOrderContainer>
 
                     <AdressInfoContainer>
-                        <h1><MapPinLine size={22} /> Delivery Address</h1>
-                        <h3>Enter the address where you want to receive your order</h3>
+                        <Text variant="textM"><MapPinLine size={22} /> Delivery Address</Text>
+                        <Text variant="textS">Enter the address where you want to receive your order</Text>
                         <form action="">
                             <input type="text" placeholder="Zip Code" />
                             <input type="text" placeholder="Street" />
@@ -24,8 +25,8 @@ export function Checkout(){
                         </form>
                     </AdressInfoContainer>
                     <PaymentInfoContainer>
-                        <h1><CurrencyEur size={22} />Payment</h1>
-                        <h3>Payment is made upon delivery. Choose the payment method you prefer</h3>
+                        <Text variant="textM"><CurrencyEur size={22} />Payment</Text>
+                        <Text variant="textS">Payment is made upon delivery. Choose the payment method you prefer</Text>
                         <form action="">
                             <label>
                                 <input type="radio" name="paymentMethod" value="credit" />
@@ -44,20 +45,20 @@ export function Checkout(){
                 </CheckoutCompleteOrderContainer>
             </div>
             <div>
-                 <h1>Selected Coffees</h1>
+                 <Text variant="titleXs">Selected Coffees</Text>
                  <SelectedCoffeesContainer>
                     <h1>Coffee Card here</h1>
                     <div>
-                        <h3>Subtotal</h3>
-                        <h3>29,00€</h3>
+                        <Text variant="textS">Subtotal</Text>
+                        <Text variant="textM">29,00€</Text>
                     </div>
                     <div>
-                        <h3>Delivery fee</h3>
-                        <h3>3,00€</h3>
+                        <Text variant="textS">Delivery fee</Text>
+                        <Text variant="textM">3,00€</Text>
                     </div>
                     <div>
-                        <h3>Order Total</h3>
-                        <h3>32,00€</h3>
+                        <Text variant="textS">Order Total</Text>
+                        <Text variant="textM">32,00€</Text>
                         <button>Submit Order</button>
                     </div>
                  </SelectedCoffeesContainer>
