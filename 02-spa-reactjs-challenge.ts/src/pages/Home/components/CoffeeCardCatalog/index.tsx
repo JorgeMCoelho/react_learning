@@ -3,7 +3,7 @@ import { CoffeActionsPlusAndMinus, CoffeeActions, CoffeeBuyContainer, CoffeeCard
 import { Text } from "../../../../styles/Text"
 import { Minus, Plus, ShoppingCart } from "phosphor-react"
 
-export function CoffeeCard() {
+export function CoffeeCardCatalog() {
     return (
         <CoffeeCardWrapper>
             <img src={coffee} alt="" />

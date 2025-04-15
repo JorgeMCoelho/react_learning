@@ -3,7 +3,7 @@ import { CoffeeCardContainer, HomeContainer, IntroContainer, IntroContainerBackg
 import coffeeDelivery from '../../assets/coffeeDelivery.svg'
 import { Text } from "../../styles/Text"
 import { Coffee, Package, ShoppingCart, Timer } from "phosphor-react"
-import { CoffeeCard } from "./components/CoffeeCard"
+import { CoffeeCardCatalog } from "./components/CoffeeCardCatalog"
 
 export function Home() {
     return(
@@ -31,10 +31,10 @@ export function Home() {
             </IntroContainerBackground>
 
             <CoffeeCardContainer>
-                <CoffeeCard />
-                <CoffeeCard />
-                <CoffeeCard />
-                <CoffeeCard />
+                <CoffeeCardCatalog />
+                <CoffeeCardCatalog />
+                <CoffeeCardCatalog />
+                <CoffeeCardCatalog />
             </CoffeeCardContainer>
         </HomeContainer>
         

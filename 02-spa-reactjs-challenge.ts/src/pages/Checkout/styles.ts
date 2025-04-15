@@ -17,18 +17,32 @@ export const CheckoutContainers = styled.div`
     background-color: ${props => props.theme.colors['base-card']};
     padding: 2.5rem;
     border-radius: 6px;
+
+        header {    
+            display: flex;
+            flex-direction: row;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
 `
 
 export const AdressInfoContainer = styled(CheckoutContainers)`
+    svg {
+        color: ${props => props.theme.colors['yellow-dark']};
+    }
 
 `
 
 export const PaymentInfoContainer = styled(CheckoutContainers)`
+    svg {
+        color: ${props => props.theme.colors['purple']};
+    }      
+
     form {
         display: flex;
         gap: 0.75rem;
         margin-top: 2rem;
-    }    
+    } 
 
     label {
 
@@ -54,7 +68,8 @@ export const PaymentInfoContainer = styled(CheckoutContainers)`
     }
 
     input[type="radio"] {  
-        display: none;    
+        display: none;  
+
     }     
 `
 

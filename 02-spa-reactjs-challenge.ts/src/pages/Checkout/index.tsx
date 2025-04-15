@@ -1,4 +1,5 @@
 import { Text } from "../../styles/Text";
+import { CoffeeCardCart } from "./components/CoffeeCardCart";
 import { AdressInfoContainer, CheckoutCompleteOrderContainer, CheckoutWrapper, PaymentInfoContainer, SelectedCoffeesContainer } from "./styles";
 
 import { Bank, CreditCard, CurrencyEur, MapPinLine, Money } from "phosphor-react"
@@ -12,8 +13,16 @@ export function Checkout(){
                 <CheckoutCompleteOrderContainer>
 
                     <AdressInfoContainer>
-                        <Text variant="textM"><MapPinLine size={22} /> Delivery Address</Text>
-                        <Text variant="textS">Enter the address where you want to receive your order</Text>
+                        <header>
+                            <div>
+                                <MapPinLine size={22} />
+                            </div>
+                            <div>
+                                <Text variant="textM"> Delivery Address</Text>
+                                <Text variant="textS">Enter the address where you want to receive your order</Text>
+                            </div>
+                        </header>
+
                         <form action="">
                             <input type="text" placeholder="Zip Code" />
                             <input type="text" placeholder="Street" />
@@ -25,8 +34,16 @@ export function Checkout(){
                         </form>
                     </AdressInfoContainer>
                     <PaymentInfoContainer>
-                        <Text variant="textM"><CurrencyEur size={22} />Payment</Text>
-                        <Text variant="textS">Payment is made upon delivery. Choose the payment method you prefer</Text>
+                        <header>
+                            <div>
+                                <CurrencyEur size={22} />
+                            </div>
+                            <div>
+                                <Text variant="textM">Payment</Text>
+                                <Text variant="textS">Payment is made upon delivery. Choose the payment method you prefer</Text>
+                            </div>
+                        </header>
+                        
                         <form action="">
                             <label>
                                 <input type="radio" name="paymentMethod" value="credit" />
@@ -47,7 +64,7 @@ export function Checkout(){
             <div>
                  <Text variant="titleXs">Selected Coffees</Text>
                  <SelectedCoffeesContainer>
-                    <h1>Coffee Card here</h1>
+                    <CoffeeCardCart />
                     <div>
                         <Text variant="textS">Subtotal</Text>
                         <Text variant="textM">29,00€</Text>
