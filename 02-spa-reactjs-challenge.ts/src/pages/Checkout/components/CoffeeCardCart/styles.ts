@@ -18,6 +18,7 @@ export const CoffeeCardCartContainer = styled.div`
 
 export const CoffeeCardCartActions = styled.div`
     display: flex;
+    gap: 0.5rem;
 
     button{
         background-color: ${props => props.theme.colors['base-button']};

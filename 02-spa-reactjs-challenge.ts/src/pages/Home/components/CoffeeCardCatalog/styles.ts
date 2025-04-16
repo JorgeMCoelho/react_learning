@@ -46,13 +46,7 @@ export const CoffeeActions = styled.div`
         flex-direction: row;   
         gap: 0.5rem;
 
-    svg {
-        color: ${props => props.theme.colors['purple']};
 
-        &:hover {
-            color: ${(props) => props.theme.colors['purple-dark']};
-        }
-    }
 
     button {
         background-color: ${props => props.theme.colors['purple-dark']};

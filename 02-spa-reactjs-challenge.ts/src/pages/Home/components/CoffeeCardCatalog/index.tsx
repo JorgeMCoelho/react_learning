@@ -2,6 +2,7 @@ import coffee from '../../../../assets/Coffee.svg'
 import { CoffeActionsPlusAndMinus, CoffeeActions, CoffeeBuyContainer, CoffeeCardWrapper, CoffeeCategory, CoffeeDescription } from './styles'
 import { Text } from "../../../../styles/Text"
 import { Minus, Plus, ShoppingCart } from "phosphor-react"
+import { PlusAndMinusCounter } from '../../../../components/PlusAndMinusCounter'
 
 export function CoffeeCardCatalog() {
     return (
@@ -21,11 +22,7 @@ export function CoffeeCardCatalog() {
             <CoffeeBuyContainer>
                <Text variant="titleM"> 2.00</Text><Text variant="textS"> €</Text>
                 <CoffeeActions>
-                    <CoffeActionsPlusAndMinus>
-                        <Minus size={14} />
-                        1
-                        <Plus size={14} />
-                    </CoffeActionsPlusAndMinus>
+                <PlusAndMinusCounter />
                     <button>
                         <ShoppingCart size={22} weight="fill" />
                     </button>
