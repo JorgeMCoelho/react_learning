@@ -77,5 +77,28 @@ export const SelectedCoffeesContainer = styled.div`
     background-color: ${props => props.theme.colors['base-card']};
     padding: 2.5rem;
     border-radius: 6px 44px 6px 44px;
-    
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;    
+`
+
+export const SelectedCoffeesTotals = styled.div`
+    display: flex;
+    justify-content: space-between;
+`
+
+export const SubmitOrderButton = styled.button`
+    background-color: ${props => props.theme.colors['yellow']};
+    color: ${props => props.theme.colors['white']};
+
+    border: none;
+    border-radius: 6px;
+    padding: 0.75rem 0.5rem;
+    cursor: pointer;
+
+    &:hover{
+        background-color: ${props => props.theme.colors['yellow-dark']};
+    }
+
 `

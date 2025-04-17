@@ -1,6 +1,6 @@
 import { Text } from "../../styles/Text";
 import { CoffeeCardCart } from "./components/CoffeeCardCart";
-import { AdressInfoContainer, CheckoutCompleteOrderContainer, CheckoutWrapper, PaymentInfoContainer, SelectedCoffeesContainer } from "./styles";
+import { AdressInfoContainer, CheckoutCompleteOrderContainer, CheckoutWrapper, PaymentInfoContainer, SelectedCoffeesContainer, SelectedCoffeesTotals, SubmitOrderButton } from "./styles";
 
 import { Bank, CreditCard, CurrencyEur, MapPinLine, Money } from "phosphor-react"
 
@@ -65,19 +65,19 @@ export function Checkout(){
                  <Text variant="titleXs">Selected Coffees</Text>
                  <SelectedCoffeesContainer>
                     <CoffeeCardCart />
-                    <div>
+                    <SelectedCoffeesTotals>
                         <Text variant="textS">Subtotal</Text>
                         <Text variant="textM">29,00€</Text>
-                    </div>
-                    <div>
+                    </SelectedCoffeesTotals>
+                    <SelectedCoffeesTotals>
                         <Text variant="textS">Delivery fee</Text>
                         <Text variant="textM">3,00€</Text>
-                    </div>
-                    <div>
-                        <Text variant="textS">Order Total</Text>
-                        <Text variant="textM">32,00€</Text>
-                        <button>Submit Order</button>
-                    </div>
+                    </SelectedCoffeesTotals>
+                    <SelectedCoffeesTotals>
+                        <Text variant="textL">Order Total</Text>
+                        <Text variant="textL">32,00€</Text>
+                    </SelectedCoffeesTotals>
+                    <SubmitOrderButton>Submit Order</SubmitOrderButton>
                  </SelectedCoffeesContainer>
             </div>
         </CheckoutWrapper>

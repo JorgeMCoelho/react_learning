@@ -1,4 +1,4 @@
-import { Minus, Plus, Trash } from 'phosphor-react'
+import { Trash } from 'phosphor-react'
 import coffee from '../../../../assets/Coffee.svg'
 import { Text } from '../../../../styles/Text'
 import { CoffeeCardCartActions, CoffeeCardCartContainer, CoffeeCardCartWrapper } from './styles'
