@@ -65,6 +65,7 @@ export function Checkout(){
                  <Text variant="titleXs">Selected Coffees</Text>
                  <SelectedCoffeesContainer>
                     <CoffeeCardCart />
+                    <CoffeeCardCart />
                     <SelectedCoffeesTotals>
                         <Text variant="textS">Subtotal</Text>
                         <Text variant="textM">29,00€</Text>

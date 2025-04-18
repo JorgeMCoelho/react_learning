@@ -1,7 +1,7 @@
 import coffee from '../../../../assets/Coffee.svg'
-import { CoffeActionsPlusAndMinus, CoffeeActions, CoffeeBuyContainer, CoffeeCardWrapper, CoffeeCategory, CoffeeDescription } from './styles'
+import { CoffeeActions, CoffeeBuyContainer, CoffeeCardWrapper, CoffeeCategory, CoffeeDescription } from './styles'
 import { Text } from "../../../../styles/Text"
-import { Minus, Plus, ShoppingCart } from "phosphor-react"
+import { ShoppingCart } from "phosphor-react"
 import { PlusAndMinusCounter } from '../../../../components/PlusAndMinusCounter'
 
 export function CoffeeCardCatalog() {
