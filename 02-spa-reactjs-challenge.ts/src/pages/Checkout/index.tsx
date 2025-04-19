@@ -24,13 +24,21 @@ export function Checkout(){
                         </header>
 
                         <form action="">
-                            <input type="text" placeholder="Zip Code" />
-                            <input type="text" placeholder="Street" />
-                            <input type="text" placeholder="Number" />
-                            <input type="text" placeholder="Aditional Info" /> 
-                            <input type="text" placeholder="Neighborhood" />
-                            <input type="text" placeholder="City" />
-                            <input type="text" placeholder="State" />
+                            <div>
+                                <input type="text" placeholder="Zip Code" />
+                            </div>
+                            <div>
+                                <input type="text" placeholder="Street" />
+                            </div>
+                            <div>
+                                <input type="text" placeholder="Number" />
+                                <input type="text" placeholder="Aditional Info" />
+                            </div>
+                            <div> 
+                                <input type="text" placeholder="Neighborhood" />
+                                <input type="text" placeholder="City" />
+                                <input type="text" placeholder="State" />
+                            </div>
                         </form>
                     </AdressInfoContainer>
                     <PaymentInfoContainer>
