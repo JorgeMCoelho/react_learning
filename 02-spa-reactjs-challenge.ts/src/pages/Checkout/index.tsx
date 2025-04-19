@@ -1,6 +1,6 @@
 import { Text } from "../../styles/Text";
 import { CoffeeCardCart } from "./components/CoffeeCardCart";
-import { AdressInfoContainer, CheckoutCompleteOrderContainer, CheckoutWrapper, PaymentInfoContainer, SelectedCoffeesContainer, SelectedCoffeesTotals, SubmitOrderButton } from "./styles";
+import { AddressForm, AdressInfoContainer, AdressInputAditionalInfo, AdressInputCity, AdressInputNeighborhood, AdressInputNumber, AdressInputState, AdressInputStreet, AdressInputZipCode, CheckoutCompleteOrderContainer, CheckoutWrapper, PaymentInfoContainer, SelectedCoffeesContainer, SelectedCoffeesTotals, SubmitOrderButton } from "./styles";
 
 import { Bank, CreditCard, CurrencyEur, MapPinLine, Money } from "phosphor-react"
 
@@ -23,23 +23,15 @@ export function Checkout(){
                             </div>
                         </header>
 
-                        <form action="">
-                            <div>
-                                <input type="text" placeholder="Zip Code" />
-                            </div>
-                            <div>
-                                <input type="text" placeholder="Street" />
-                            </div>
-                            <div>
-                                <input type="text" placeholder="Number" />
-                                <input type="text" placeholder="Aditional Info" />
-                            </div>
-                            <div> 
-                                <input type="text" placeholder="Neighborhood" />
-                                <input type="text" placeholder="City" />
-                                <input type="text" placeholder="State" />
-                            </div>
-                        </form>
+                        <AddressForm>
+                                <AdressInputZipCode type="text" placeholder="Zip Code" />
+                                <AdressInputStreet type="text" placeholder="Street" />
+                                <AdressInputNumber type="text" placeholder="Number" />
+                                <AdressInputAditionalInfo type="text" placeholder="Aditional Info" />
+                                <AdressInputNeighborhood type="text" placeholder="Neighborhood" />
+                                <AdressInputCity type="text" placeholder="City" />
+                                <AdressInputState type="text" placeholder="State" />
+                        </AddressForm>
                     </AdressInfoContainer>
                     <PaymentInfoContainer>
                         <header>

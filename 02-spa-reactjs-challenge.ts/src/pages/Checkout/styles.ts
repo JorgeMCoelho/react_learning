@@ -73,6 +73,56 @@ export const PaymentInfoContainer = styled(CheckoutContainers)`
     }     
 `
 
+export const AddressForm = styled.form`
+    display: grid;
+    grid-template-columns: 1fr 3fr 5rem;
+    gap: 1rem 0.75rem;
+`
+export const AdressInput = styled.input`
+    padding: 0.75rem;
+
+    background-color: ${props => props.theme.colors['base-input']};
+    border: 1px solid ${props => props.theme.colors['base-button']};
+
+    &:focus {
+        border: 1px solid ${props => props.theme.colors['yellow-dark']};
+        outline: none;
+        box-shadow: none;
+    }
+`
+
+export const AdressInputZipCode = styled(AdressInput)`
+    grid-column: 1/2;
+    grid-row: 1;
+`
+export const AdressInputStreet = styled(AdressInput)`
+    grid-column: 1/4;
+    grid-row: 2;
+`
+
+export const AdressInputNumber = styled(AdressInput)`
+    grid-column: 1/2;
+    grid-row: 3;
+`
+export const AdressInputAditionalInfo = styled(AdressInput)`
+    grid-column: 2/4;
+    grid-row: 3;
+`
+
+export const AdressInputNeighborhood = styled(AdressInput)`
+    grid-column: 1/2;
+    grid-row: 4;
+`
+export const AdressInputCity = styled(AdressInput)`
+    grid-column: 2/3;
+    grid-row: 4;
+`
+export const AdressInputState = styled(AdressInput)`
+    grid-column: 3/4;
+    grid-row: 4;
+`
+
+
 export const SelectedCoffeesContainer = styled.div`
     background-color: ${props => props.theme.colors['base-card']};
     padding: 2.5rem;
