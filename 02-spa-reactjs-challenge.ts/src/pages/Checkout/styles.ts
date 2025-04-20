@@ -98,8 +98,12 @@ export const PaymentMethodForm = styled.form`
     }
     
     label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         width: 100%;
+        height: 3.1875rem;
         padding: 1rem auto;
         gap: 0.5rem;        
 
@@ -112,7 +116,7 @@ export const PaymentMethodForm = styled.form`
         &:hover{
             background-color: ${props => props.theme.colors['base-hover']};
         }
-            
+
         span{
             display: flex;
             align-items: center;
