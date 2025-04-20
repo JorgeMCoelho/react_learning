@@ -1,6 +1,6 @@
 import { Text } from "../../styles/Text";
 import { CoffeeCardCart } from "./components/CoffeeCardCart";
-import { AddressForm, AdressInfoContainer, AdressInputAditionalInfo, AdressInputCity, AdressInputNeighborhood, AdressInputNumber, AdressInputState, AdressInputStreet, AdressInputZipCode, CheckoutCompleteOrderContainer, CheckoutWrapper, PaymentInfoContainer, SelectedCoffeesContainer, SelectedCoffeesTotals, SubmitOrderButton } from "./styles";
+import { AddressForm, AdressInfoContainer, AdressInputAditionalInfo, AdressInputCity, AdressInputNeighborhood, AdressInputNumber, AdressInputState, AdressInputStreet, AdressInputZipCode, CheckoutCompleteOrderContainer, CheckoutWrapper, PaymentInfoContainer, PaymentMethodForm, SelectedCoffeesContainer, SelectedCoffeesTotals, SubmitOrderButton } from "./styles";
 
 import { Bank, CreditCard, CurrencyEur, MapPinLine, Money } from "phosphor-react"
 
@@ -44,7 +44,7 @@ export function Checkout(){
                             </div>
                         </header>
                         
-                        <form action="">
+                        <PaymentMethodForm>
                             <label>
                                 <input type="radio" name="paymentMethod" value="credit" />
                                 <span><CreditCard size={16} /> Credit Card</span>
@@ -57,7 +57,7 @@ export function Checkout(){
                                 <input type="radio" name="paymentMethod" value="money" />
                                 <span><Money size={16} />Money</span>
                             </label>
-                        </form>
+                        </PaymentMethodForm>
                     </PaymentInfoContainer>
                 </CheckoutCompleteOrderContainer>
             </div>

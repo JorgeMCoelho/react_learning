@@ -37,40 +37,6 @@ export const PaymentInfoContainer = styled(CheckoutContainers)`
     svg {
         color: ${props => props.theme.colors['purple']};
     }      
-
-    form {
-        display: flex;
-        gap: 0.75rem;
-        margin-top: 2rem;
-    } 
-
-    label {
-
-        width: 100%;
-        padding: 1rem auto;
-        gap: 0.5rem;        
-
-        background-color: ${props => props.theme.colors['base-button']};
-
-        border-radius: 6px;
-        cursor: pointer;
-        transition: 0.2s all;
-
-        &:hover{
-            background-color: ${props => props.theme.colors['base-hover']};
-        }
-        span{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-        }
-    }
-
-    input[type="radio"] {  
-        display: none;  
-
-    }     
 `
 
 export const AddressForm = styled.form`
@@ -120,6 +86,42 @@ export const AdressInputCity = styled(AdressInput)`
 export const AdressInputState = styled(AdressInput)`
     grid-column: 3/4;
     grid-row: 4;
+`
+
+export const PaymentMethodForm = styled.form`
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 2rem;
+
+    input[type="radio"] {  
+        display: none;  
+    }
+    
+    label {
+
+        width: 100%;
+        padding: 1rem auto;
+        gap: 0.5rem;        
+
+        background-color: ${props => props.theme.colors['base-button']};
+
+        border-radius: 6px;
+        cursor: pointer;
+        transition: 0.2s all;
+
+        &:hover{
+            background-color: ${props => props.theme.colors['base-hover']};
+        }
+            
+        span{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+    }  
+        
+
 `
 
 
