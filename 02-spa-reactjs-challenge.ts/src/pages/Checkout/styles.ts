@@ -88,23 +88,13 @@ export const AdressInputState = styled(AdressInput)`
     grid-column: 3/4;
     grid-row: 4;
 `
-export const Temp = styled.div`
-    display: flex;
-    gap: 0.75rem;
-    width: 100%;
-`
-
-export const PaymentMethodForm = styled.form`
+export const PaymentMethodDiv = styled.div`
     display: flex;
     gap: 0.75rem;
     margin-top: 2rem;
-    flex-direction: row;
-
-    input[type="radio"] {  
-        display: none;  
-    }       
 `
-export const BasePaymentMethodFormLabel = styled.label`
+
+export const PaymentMethodBaseButton = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -131,10 +121,10 @@ export const BasePaymentMethodFormLabel = styled.label`
     }
 `
 
-export const PaymentMethodFormNonSelected = styled(BasePaymentMethodFormLabel)`
+export const PaymentMethodNonSelectedButton = styled(PaymentMethodBaseButton)`
     background-color: ${props => props.theme.colors['base-button']};
 `
-export const PaymentMethodFormSelected = styled(BasePaymentMethodFormLabel)`
+export const PaymentMethodSelectedButton = styled(PaymentMethodBaseButton)`
     background-color: ${props => props.theme.colors['purple-light']};
     border: 1px solid ${props => props.theme.colors['purple']};
 `

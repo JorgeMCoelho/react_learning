@@ -1,19 +1,14 @@
+import { useState } from "react";
 import { Text } from "../../styles/Text";
 import { CoffeeCardCart } from "./components/CoffeeCardCart";
-import { AddressForm, AdressInfoContainer, AdressInputAditionalInfo, AdressInputCity, AdressInputNeighborhood, AdressInputNumber, AdressInputState, AdressInputStreet, AdressInputZipCode, CheckoutCompleteOrderContainer, CheckoutWrapper, PaymentInfoContainer, PaymentMethodForm, PaymentMethodFormNonSelected, PaymentMethodFormSelected, SelectedCoffeesContainer, SelectedCoffeesTotals, SubmitOrderButton, Temp } from "./styles";
+import { AddressForm, AdressInfoContainer, AdressInputAditionalInfo, AdressInputCity, AdressInputNeighborhood, AdressInputNumber, AdressInputState, AdressInputStreet, AdressInputZipCode, CheckoutCompleteOrderContainer, CheckoutWrapper, PaymentInfoContainer, PaymentMethodDiv, PaymentMethodNonSelectedButton, PaymentMethodSelectedButton, SelectedCoffeesContainer, SelectedCoffeesTotals, SubmitOrderButton } from "./styles";
 
 import { Bank, CreditCard, CurrencyEur, MapPinLine, Money } from "phosphor-react"
 
 
 export function Checkout(){
 
-    interface PaymentMethod {
-        name: string;
-        icon: React.ReactNode;
-        isSelected: boolean;
-    }
-
-    const paymentMethods: PaymentMethod[] = [
+    const [paymentMethods, setPaymentMethods] = useState([
         {
             name: 'Credit Card',
             icon: <CreditCard size={16} />,
@@ -29,7 +24,8 @@ export function Checkout(){
             icon: <Money size={16} />,
             isSelected: true,
         }
-    ]
+    ])
+
 
     return(
         <CheckoutWrapper>
@@ -69,24 +65,20 @@ export function Checkout(){
                             </div>
                         </header>
                         
-                       <PaymentMethodForm>
+                       <PaymentMethodDiv>
                             {paymentMethods.map(method => (
                                 method.isSelected 
                                     ? (
-                                        <PaymentMethodFormSelected key={method.name}>
-                                                <input type="radio" name="paymentMethod" value={method.name} />
+                                        <PaymentMethodSelectedButton>
                                                 <span>{method.icon} {method.name}</span>
-                                        </PaymentMethodFormSelected>
+                                        </PaymentMethodSelectedButton>
                                     ) : (
-                                        <PaymentMethodFormNonSelected key={method.name}>
-                                            <label>
-                                                <input type="radio" name="paymentMethod" value={method.name} />
+                                        <PaymentMethodNonSelectedButton>
                                                 <span>{method.icon} {method.name}</span>
-                                            </label>
-                                        </PaymentMethodFormNonSelected>
+                                        </PaymentMethodNonSelectedButton>
                                     )
                             ))}
-                            </PaymentMethodForm>
+                        </PaymentMethodDiv>
                         
   
                     </PaymentInfoContainer>
