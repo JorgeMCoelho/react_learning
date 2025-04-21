@@ -1,11 +1,36 @@
 import { Text } from "../../styles/Text";
 import { CoffeeCardCart } from "./components/CoffeeCardCart";
-import { AddressForm, AdressInfoContainer, AdressInputAditionalInfo, AdressInputCity, AdressInputNeighborhood, AdressInputNumber, AdressInputState, AdressInputStreet, AdressInputZipCode, CheckoutCompleteOrderContainer, CheckoutWrapper, PaymentInfoContainer, PaymentMethodForm, SelectedCoffeesContainer, SelectedCoffeesTotals, SubmitOrderButton } from "./styles";
+import { AddressForm, AdressInfoContainer, AdressInputAditionalInfo, AdressInputCity, AdressInputNeighborhood, AdressInputNumber, AdressInputState, AdressInputStreet, AdressInputZipCode, CheckoutCompleteOrderContainer, CheckoutWrapper, PaymentInfoContainer, PaymentMethodForm, PaymentMethodFormNonSelected, PaymentMethodFormSelected, SelectedCoffeesContainer, SelectedCoffeesTotals, SubmitOrderButton, Temp } from "./styles";
 
 import { Bank, CreditCard, CurrencyEur, MapPinLine, Money } from "phosphor-react"
 
 
 export function Checkout(){
+
+    interface PaymentMethod {
+        name: string;
+        icon: React.ReactNode;
+        isSelected: boolean;
+    }
+
+    const paymentMethods: PaymentMethod[] = [
+        {
+            name: 'Credit Card',
+            icon: <CreditCard size={16} />,
+            isSelected: false,
+        },
+        {
+            name: 'Debit Card',
+            icon: <Bank size={16} />,
+            isSelected: false,
+        },
+        {
+            name: 'Money',
+            icon: <Money size={16} />,
+            isSelected: true,
+        }
+    ]
+
     return(
         <CheckoutWrapper>
             <div>
@@ -44,20 +69,26 @@ export function Checkout(){
                             </div>
                         </header>
                         
-                        <PaymentMethodForm>
-                            <label>
-                                <input type="radio" name="paymentMethod" value="credit" />
-                                <span><CreditCard size={16} /> Credit Card</span>
-                            </label>
-                            <label>
-                                <input type="radio" name="paymentMethod" value="debit" />
-                                <span><Bank size={16} />Debit Card</span>
-                            </label>
-                            <label>
-                                <input type="radio" name="paymentMethod" value="money" />
-                                <span><Money size={16} />Money</span>
-                            </label>
-                        </PaymentMethodForm>
+                       <PaymentMethodForm>
+                            {paymentMethods.map(method => (
+                                method.isSelected 
+                                    ? (
+                                        <PaymentMethodFormSelected key={method.name}>
+                                                <input type="radio" name="paymentMethod" value={method.name} />
+                                                <span>{method.icon} {method.name}</span>
+                                        </PaymentMethodFormSelected>
+                                    ) : (
+                                        <PaymentMethodFormNonSelected key={method.name}>
+                                            <label>
+                                                <input type="radio" name="paymentMethod" value={method.name} />
+                                                <span>{method.icon} {method.name}</span>
+                                            </label>
+                                        </PaymentMethodFormNonSelected>
+                                    )
+                            ))}
+                            </PaymentMethodForm>
+                        
+  
                     </PaymentInfoContainer>
                 </CheckoutCompleteOrderContainer>
             </div>

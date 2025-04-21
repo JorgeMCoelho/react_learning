@@ -11,6 +11,7 @@ export const CheckoutWrapper = styled.div`
 export const CheckoutCompleteOrderContainer = styled.div`
     display: flex;
     flex-direction: column;
+    margin-top: 1rem;
     gap:0.9375rem;
 `
 export const CheckoutContainers = styled.div`
@@ -87,51 +88,61 @@ export const AdressInputState = styled(AdressInput)`
     grid-column: 3/4;
     grid-row: 4;
 `
+export const Temp = styled.div`
+    display: flex;
+    gap: 0.75rem;
+    width: 100%;
+`
 
 export const PaymentMethodForm = styled.form`
     display: flex;
     gap: 0.75rem;
     margin-top: 2rem;
+    flex-direction: row;
 
     input[type="radio"] {  
         display: none;  
+    }       
+`
+export const BasePaymentMethodFormLabel = styled.label`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 3.1875rem;
+    padding: 1rem auto;
+    gap: 0.5rem;        
+        
+    border: 1px solid transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s all;
+
+    &:hover{
+        background-color: ${props => props.theme.colors['base-hover']};
     }
-    
-    label {
+
+    span{
         display: flex;
         align-items: center;
         justify-content: center;
-
-        width: 100%;
-        height: 3.1875rem;
-        padding: 1rem auto;
-        gap: 0.5rem;        
-
-        background-color: ${props => props.theme.colors['base-button']};
-
-        border-radius: 6px;
-        cursor: pointer;
-        transition: 0.2s all;
-
-        &:hover{
-            background-color: ${props => props.theme.colors['base-hover']};
-        }
-
-        span{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-        }
-    }  
-        
-
+        gap: 0.75rem;
+    }
 `
 
+export const PaymentMethodFormNonSelected = styled(BasePaymentMethodFormLabel)`
+    background-color: ${props => props.theme.colors['base-button']};
+`
+export const PaymentMethodFormSelected = styled(BasePaymentMethodFormLabel)`
+    background-color: ${props => props.theme.colors['purple-light']};
+    border: 1px solid ${props => props.theme.colors['purple']};
+`
 
 export const SelectedCoffeesContainer = styled.div`
     background-color: ${props => props.theme.colors['base-card']};
     padding: 2.5rem;
+    margin-top: 1rem;
     border-radius: 6px 44px 6px 44px;
 
     display: flex;
