@@ -26,6 +26,14 @@ export function Checkout(){
         }
     ])
 
+    function handleSelectPayment(paymentName: string){
+        setPaymentMethods( prevState =>
+            prevState.map(method => ({
+                ...method,
+                isSelected: method.name === paymentName,
+            }))
+        );
+    }
 
     return(
         <CheckoutWrapper>
@@ -69,11 +77,11 @@ export function Checkout(){
                             {paymentMethods.map(method => (
                                 method.isSelected 
                                     ? (
-                                        <PaymentMethodSelectedButton>
+                                        <PaymentMethodSelectedButton key = {method.name}>
                                                 <span>{method.icon} {method.name}</span>
                                         </PaymentMethodSelectedButton>
                                     ) : (
-                                        <PaymentMethodNonSelectedButton>
+                                        <PaymentMethodNonSelectedButton key = {method.name} onClick= {() => handleSelectPayment(method.name)}>
                                                 <span>{method.icon} {method.name}</span>
                                         </PaymentMethodNonSelectedButton>
                                     )
