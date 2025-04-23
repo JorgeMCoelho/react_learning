@@ -162,10 +162,10 @@ export function Home() {
             </IntroContainerBackground>
 
             <CoffeeCardContainer>
-
                 {coffeeCatalog.map(coffee => {
                         return (
-                            <CoffeeCardCatalog key={coffee.id}
+                            <CoffeeCardCatalog 
+                                key={coffee.id}
                                 id={coffee.id}
                                 image={coffee.image}
                                 title={coffee.title}

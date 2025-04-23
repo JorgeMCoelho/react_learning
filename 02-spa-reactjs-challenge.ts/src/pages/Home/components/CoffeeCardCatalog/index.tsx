@@ -12,7 +12,7 @@ export interface CoffeeCardCatalogType{
     category: string
 }
 
-export function CoffeeCardCatalog({ id, image, title, description, price, category }: CoffeeCardCatalogType) {
+export function CoffeeCardCatalog({ image, title, description, price, category }: CoffeeCardCatalogType) {
     return (
         <CoffeeCardWrapper>
             <img src={image} alt="" />
@@ -28,7 +28,7 @@ export function CoffeeCardCatalog({ id, image, title, description, price, catego
             </CoffeeDescription>
 
             <CoffeeBuyContainer>
-               <Text variant="titleM"> {price}</Text><Text variant="textS"> €</Text>
+               <Text variant="titleM"> {price.toFixed(2)}</Text><Text variant="textS"> €</Text>
                 <CoffeeActions>
                 <PlusAndMinusCounter />
                     <button>
