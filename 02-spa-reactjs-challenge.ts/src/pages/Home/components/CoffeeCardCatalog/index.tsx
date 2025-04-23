@@ -1,26 +1,34 @@
-import coffee from '../../../../assets/Coffee.svg'
 import { CoffeeActions, CoffeeBuyContainer, CoffeeCardWrapper, CoffeeCategory, CoffeeDescription } from './styles'
 import { Text } from "../../../../styles/Text"
 import { ShoppingCart } from "phosphor-react"
 import { PlusAndMinusCounter } from '../../../../components/PlusAndMinusCounter'
 
-export function CoffeeCardCatalog() {
+export interface CoffeeCardCatalogType{
+    id: number;
+    image: string;
+    title: string;
+    description: string;
+    price: number;
+    category: string
+}
+
+export function CoffeeCardCatalog({ id, image, title, description, price, category }: CoffeeCardCatalogType) {
     return (
         <CoffeeCardWrapper>
-            <img src={coffee} alt="" />
+            <img src={image} alt="" />
 
             <CoffeeCategory>
-                <Text variant="tag">TRADITIONAL</Text>
+                <Text variant="tag">{category}</Text>
             </CoffeeCategory>
 
-            <Text variant="titleS">Traditional Espresso</Text>
+            <Text variant="titleS">{title}</Text>
 
             <CoffeeDescription>
-                <Text variant="textS">The traditional coffee made with hot water and ground beans.</Text>
+                <Text variant="textS">{description}</Text>
             </CoffeeDescription>
 
             <CoffeeBuyContainer>
-               <Text variant="titleM"> 2.00</Text><Text variant="textS"> €</Text>
+               <Text variant="titleM"> {price}</Text><Text variant="textS"> €</Text>
                 <CoffeeActions>
                 <PlusAndMinusCounter />
                     <button>
