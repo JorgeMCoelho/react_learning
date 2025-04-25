@@ -22,7 +22,7 @@ export function Checkout(){
         {
             name: 'Money',
             icon: <Money size={16} />,
-            isSelected: true,
+            isSelected: false,
         }
     ])
 
