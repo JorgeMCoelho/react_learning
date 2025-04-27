@@ -6,6 +6,7 @@ export const SuccessWrapper = styled.div`
     gap: 6.375rem;
     margin: 5.25rem auto;
     max-width: 80rem;
+    align-items: end;
 `
 
 export const SuccessContainer = styled.div`

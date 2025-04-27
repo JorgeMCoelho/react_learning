@@ -12,7 +12,7 @@ export function Header() {
                 <nav>
                     <LocationButton>
                         <MapPin size={22} weight='fill' />
-                        Porto Alegre, RS
+                        New Cambria, KS
                     </LocationButton>
                     <ShoppingCartButton>
                         <ShoppingCart size={22} weight='fill' />
