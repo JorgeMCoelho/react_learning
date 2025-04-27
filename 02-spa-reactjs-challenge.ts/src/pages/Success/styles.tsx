@@ -20,7 +20,10 @@ export const ConfirmationMessageContainer = styled.div`
    
 `
 export const ConfirmationDetailsContainer = styled.div`
-    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2.5rem;    
     border-radius: 6px 36px 6px 36px;
     position: relative;
     background-color: ${props => props.theme.colors['background']};
@@ -47,18 +50,39 @@ export const ConfirmationDetailsContainer = styled.div`
     }
 `
 
-
-export const AddressDetails = styled.div`
-
+export const IconContainer = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1000px;
+    height: 2rem;
+    width: 2rem;
+        svg {
+            color: ${props => props.theme.colors['background']};
+        }
 `
 
-export const DeliveryDetails = styled.div`
-
+export const LocalIcon = styled(IconContainer)`
+    background-color: ${props => props.theme.colors['purple']};
 `
 
-export const PaymentDetails = styled.div`
-
+export const TimeIcon = styled(IconContainer)`
+    background-color: ${props => props.theme.colors['yellow']};
 `
+export const PaymentIcon = styled(IconContainer)`
+    background-color: ${props => props.theme.colors['yellow-dark']};
+`
+
+export const TextContainer = styled.div`
+`
+
+export const InfoDetails = styled.div`
+    display: flex;
+    flex-direction: flex;
+    gap: 0.75rem;
+    align-items: center;
+`
+
 
 export const IllustrationContainer = styled.div`
    
