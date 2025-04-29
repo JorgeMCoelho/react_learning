@@ -18,6 +18,10 @@ export const HeaderContainer = styled.header`
     display: flex;
     gap: 0.75rem;
     }
+
+    img{
+        cursor: pointer;
+    }
 `
 
 export const BaseHeaderButton = styled.button`
@@ -28,6 +32,8 @@ padding: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    cursor: pointer;
 `
 
 export const LocationButton = styled(BaseHeaderButton)`

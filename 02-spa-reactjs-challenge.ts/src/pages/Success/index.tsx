@@ -8,8 +8,8 @@ export function Success() {
         <SuccessWrapper>
             <SuccessContainer>
                 <ConfirmationMessageContainer>
-                    <Text variant="titleL"> YEA! Order is Confirmed</Text>
-                    <Text variant="textM">Now just sit back and wait,  your coffee’s on its way! </Text>
+                    <Text variant="titleL">YEA! Order is Confirmed</Text>
+                    <Text variant="textM">Now just sit back and wait,  your coffee’s on its way!</Text>
                 </ConfirmationMessageContainer>
                 <ConfirmationDetailsContainer>
                     <InfoDetails>
