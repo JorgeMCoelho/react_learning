@@ -45,3 +45,17 @@ export const ShoppingCartButton = styled(BaseHeaderButton)`
     background: ${(props) => props.theme.colors['yellow-light']};
     color: ${(props) => props.theme.colors['yellow-dark']};
 `
+
+export const CartCounter = styled.div`
+    background: ${(props) => props.theme.colors['yellow-dark']};
+    color: ${(props) => props.theme.colors['white']};
+
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 1000px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+`
