@@ -44,6 +44,8 @@ export const LocationButton = styled(BaseHeaderButton)`
 export const ShoppingCartButton = styled(BaseHeaderButton)`
     background: ${(props) => props.theme.colors['yellow-light']};
     color: ${(props) => props.theme.colors['yellow-dark']};
+    position: relative;
+    
 `
 
 export const CartCounter = styled.div`
@@ -58,4 +60,7 @@ export const CartCounter = styled.div`
     align-items: center;
     justify-content: center;
 
+    position: absolute;
+    top: -0.5rem;
+    right: -0.5rem;
 `

@@ -23,8 +23,9 @@ export function Header() {
                     </LocationButton>
                     <ShoppingCartButton onClick={() => navigate("/checkout")}>
                         <ShoppingCart size={22} weight='fill' />
+                        <CartCounter> <Text variant="textS">0</Text> </CartCounter>
                     </ShoppingCartButton>
-                    <CartCounter> <Text variant="textS">0</Text> </CartCounter>
+                    
                     
                 </nav>
             </HeaderContainer>
