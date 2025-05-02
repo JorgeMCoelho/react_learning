@@ -5,8 +5,17 @@ import logo from '../../assets/logo.svg'
 import { useNavigate } from 'react-router-dom';
 import { Text } from '../../styles/Text';
 
+interface ShoppingCartTemp {
+    id: number;
+    productQuantity: number;
+}
+
 export function Header() {
     const navigate = useNavigate();
+    const shoppingCart = {
+        id: 1,
+        productQuantity: 2,
+    }
     return (
 
         <HeaderWrapper>
@@ -23,7 +32,13 @@ export function Header() {
                     </LocationButton>
                     <ShoppingCartButton onClick={() => navigate("/checkout")}>
                         <ShoppingCart size={22} weight='fill' />
-                        <CartCounter> <Text variant="textS">0</Text> </CartCounter>
+                            {shoppingCart.productQuantity > 0 && (
+                                <CartCounter>
+                                    <Text variant="textS">{shoppingCart.productQuantity}</Text>
+                                </CartCounter>
+                            )}
+
+            
                     </ShoppingCartButton>
                     
                     

@@ -45,7 +45,6 @@ export const ShoppingCartButton = styled(BaseHeaderButton)`
     background: ${(props) => props.theme.colors['yellow-light']};
     color: ${(props) => props.theme.colors['yellow-dark']};
     position: relative;
-    
 `
 
 export const CartCounter = styled.div`
