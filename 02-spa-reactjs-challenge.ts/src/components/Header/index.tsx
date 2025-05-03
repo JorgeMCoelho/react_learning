@@ -12,10 +12,12 @@ interface ShoppingCartTemp {
 
 export function Header() {
     const navigate = useNavigate();
-    const shoppingCart = {
+    
+    const shoppingCart: ShoppingCartTemp = {
         id: 1,
-        productQuantity: 2,
+        productQuantity: 0,
     }
+    
     return (
 
         <HeaderWrapper>
