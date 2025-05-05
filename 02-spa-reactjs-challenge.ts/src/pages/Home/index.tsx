@@ -18,11 +18,11 @@ import coffeeIrish from '../../assets/CoffeeIrish.png'
 import coffeeDelivery from '../../assets/coffeeDelivery.svg'
 import { Text } from "../../styles/Text"
 import { Coffee, Package, ShoppingCart, Timer } from "phosphor-react"
-import { CoffeeCardCatalog } from "./components/CoffeeCardCatalog"
+import { CoffeeCardCatalog, CoffeeCardCatalogType } from "./components/CoffeeCardCatalog"
 
 export function Home() {
 
-    const coffeeCatalog = [
+    const coffeeCatalog: CoffeeCardCatalogType[] = [
         {
             id: 1,
             image: coffee, 

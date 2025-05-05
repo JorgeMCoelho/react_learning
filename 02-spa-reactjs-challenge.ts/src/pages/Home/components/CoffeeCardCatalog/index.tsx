@@ -10,7 +10,7 @@ export interface CoffeeCardCatalogType{
     description: string;
     price: number;
     category: string
-}
+};
 
 export function CoffeeCardCatalog({ image, title, description, price, category }: CoffeeCardCatalogType) {
     return (
