@@ -1,6 +1,7 @@
 import { CoffeeActions, CoffeeBuyContainer, CoffeeCardWrapper, CoffeeCategory, CoffeeDescription } from './styles'
-import { Text } from "../../../../styles/Text"
 import { ShoppingCart } from "phosphor-react"
+import { Text } from '../../../../components/Text'
+import { Title } from '../../../../components/Title'
 import { PlusAndMinusCounter } from '../../../../components/PlusAndMinusCounter'
 
 export interface CoffeeCardCatalogType{
@@ -18,17 +19,17 @@ export function CoffeeCardCatalog({ image, title, description, price, category }
             <img src={image} alt="" />
 
             <CoffeeCategory>
-                <Text variant="tag">{category}</Text>
+                <Text >{category}</Text>
             </CoffeeCategory>
 
-            <Text variant="titleS">{title}</Text>
+            <Title size='s' weight='bold'>{title}</Title>
 
             <CoffeeDescription>
-                <Text variant="textS">{description}</Text>
+                <Text size='s' weight='normal'>{description}</Text>
             </CoffeeDescription>
 
             <CoffeeBuyContainer>
-               <Text variant="titleM"> {price.toFixed(2)}</Text><Text variant="textS"> €</Text>
+                <Title size="m" weight="bolder">{price.toFixed(2)}</Title><Text size="s" weight="normal"> €</Text>
                 <CoffeeActions>
                 <PlusAndMinusCounter />
                     <button>

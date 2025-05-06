@@ -16,9 +16,10 @@ import coffeeArabian from '../../assets/CoffeeArabian.png'
 import coffeeIrish from '../../assets/CoffeeIrish.png'
 
 import coffeeDelivery from '../../assets/coffeeDelivery.svg'
-import { Text } from "../../styles/Text"
 import { Coffee, Package, ShoppingCart, Timer } from "phosphor-react"
 import { CoffeeCardCatalog, CoffeeCardCatalogType } from "./components/CoffeeCardCatalog"
+import { Text } from "../../components/Text"
+import { Title } from "../../components/Title"
 
 export function Home() {
 
@@ -142,17 +143,17 @@ export function Home() {
             <IntroContainerBackground>
                 <IntroContainer>
                     <IntroContainerText>
-                        <Text variant="titleXl">Find the perfect coffee for any time of the day.</Text>
-                        <Text variant="textL">With Coffee Delivery, you receive your coffee wherever you are, at any time.</Text>
+                        <Title size="xl" weight="bolder">Find the perfect coffee for any time of the day.</Title>
+                        <Text size="l" weight='normal'>With Coffee Delivery, you receive your coffee wherever you are, at any time.</Text>
                         <table>
                             <tbody>
                             <ReasonsRow>
-                                <ReasonOne><ShoppingCart size={32} weight="fill" />Simple and secure purchase</ReasonOne>
-                                <ReasonTwo><Package size ={32} weight="fill" />The packaging keeps the coffee intact</ReasonTwo>
+                                <ReasonOne><ShoppingCart size={32} weight="fill" /><Text size="m" weight="normal">Simple and secure purchase</Text></ReasonOne>
+                                <ReasonTwo><Package size={32} weight="fill" /><Text size="m" weight="normal">The packaging keeps the coffee intact</Text></ReasonTwo>
                             </ReasonsRow>
                             <ReasonsRow>
-                                <ReasonThree><Timer size={32} weight="fill" />Fast and tracked delivery</ReasonThree>
-                                <ReasonFour><Coffee size={32} weight="fill" />The coffee arrives fresh</ReasonFour>
+                                <ReasonThree><Timer size={32} weight="fill" /><Text size="m" weight="normal">Fast and tracked delivery</Text></ReasonThree>
+                                <ReasonFour><Coffee size={32} weight="fill" /><Text size="m" weight="normal">The coffee arrives fresh</Text></ReasonFour>
                             </ReasonsRow>
                             </tbody>
                         </table>

@@ -28,6 +28,7 @@ export const CoffeeCategory = styled.div`
 
 export const CoffeeDescription = styled.div`
     margin: 0.5rem 1.25rem 2rem 1.25rem;
+    color: ${props => props.theme.colors['base-label']};
 `
 
 export const CoffeeBuyContainer = styled.div`

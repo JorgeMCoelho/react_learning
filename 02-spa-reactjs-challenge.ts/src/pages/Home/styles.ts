@@ -50,7 +50,7 @@ export const ReasonsCell = styled.td`
     display: flex;
     align-items: center;
     height: 2rem;
-    width: 19rem;
+    width: 100%;
     gap: 8px;
     justify-content: left;
 
