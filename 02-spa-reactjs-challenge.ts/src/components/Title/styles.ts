@@ -1,33 +1,39 @@
 import styled, {css} from "styled-components";
 
-export type TitleSizeVariant = 'xs' | 's' | 'm' | 'l' | 'xl'
+export type TitleVariant = 'xsBold' | 'sBold' | 'mExtraBold' | 'lExtraBold' | 'xlExtraBold'
 
-export type TitleWeightVariant = 'normal' | 'bold' | 'bolder'
 interface TitleContainerProps {
-    size: TitleSizeVariant;
-    weight: TitleWeightVariant;
+    variant: TitleVariant;
 }
 
-const titleSizeVariants ={
-    xs: '1.125rem',
-    s: '1.25rem',
-    m: '1.5rem',
-    l: '2rem',
-    xl: '3rem',
-}
-
-const titleWeightVariant = {
-    normal: '400',
-    bold: '600',
-    bolder: '800',
-
+const titleVariants ={
+    xsBold: {
+        fontSize: '1.125rem',
+        fontWeight: '600',
+        },
+    sBold: {
+        fontSize: '1.25rem',
+        fontWeight: '600',
+        },
+    mExtraBold: {
+        fontSize: '1.5rem',
+        fontWeight: '800',
+        },
+    lExtraBold: {
+        fontSize: '2rem',
+        fontWeight: '800',
+        },
+    xlExtraBold: {
+        fontSize: '3rem',
+        fontWeight: '800',
+        },
 }
 
 export const TitleContainer = styled.p<TitleContainerProps>`
     ${props =>{
         return css`
-            font-size: ${titleSizeVariants[props.size]};
-            font-weight: ${titleWeightVariant[props.weight]};
+            font-size: ${titleVariants[props.variant].fontSize};
+            font-weight: ${titleVariants[props.variant].fontWeight};
             line-height: 130%;
         `
     }}

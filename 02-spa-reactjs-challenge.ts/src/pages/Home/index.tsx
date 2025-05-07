@@ -143,17 +143,17 @@ export function Home() {
             <IntroContainerBackground>
                 <IntroContainer>
                     <IntroContainerText>
-                        <Title size="xl" weight="bolder">Find the perfect coffee for any time of the day.</Title>
-                        <Text size="l" weight='normal'>With Coffee Delivery, you receive your coffee wherever you are, at any time.</Text>
+                        <Title variant="xlExtraBold" >Find the perfect coffee for any time of the day.</Title>
+                        <Text variant="lRegular">With Coffee Delivery, you receive your coffee wherever you are, at any time.</Text>
                         <table>
                             <tbody>
                             <ReasonsRow>
-                                <ReasonOne><ShoppingCart size={32} weight="fill" /><Text size="m" weight="normal">Simple and secure purchase</Text></ReasonOne>
-                                <ReasonTwo><Package size={32} weight="fill" /><Text size="m" weight="normal">The packaging keeps the coffee intact</Text></ReasonTwo>
+                                <ReasonOne><ShoppingCart size={32} weight="fill" /><Text variant="mRegular">Simple and secure purchase</Text></ReasonOne>
+                                <ReasonTwo><Package size={32} weight="fill" /><Text variant="mRegular">The packaging keeps the coffee intact</Text></ReasonTwo>
                             </ReasonsRow>
                             <ReasonsRow>
-                                <ReasonThree><Timer size={32} weight="fill" /><Text size="m" weight="normal">Fast and tracked delivery</Text></ReasonThree>
-                                <ReasonFour><Coffee size={32} weight="fill" /><Text size="m" weight="normal">The coffee arrives fresh</Text></ReasonFour>
+                                <ReasonThree><Timer size={32} weight="fill" /><Text variant="mRegular">Fast and tracked delivery</Text></ReasonThree>
+                                <ReasonFour><Coffee size={32} weight="fill" /><Text variant="mRegular">The coffee arrives fresh</Text></ReasonFour>
                             </ReasonsRow>
                             </tbody>
                         </table>

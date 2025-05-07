@@ -22,14 +22,14 @@ export function CoffeeCardCatalog({ image, title, description, price, category }
                 <Text >{category}</Text>
             </CoffeeCategory>
 
-            <Title size='s' weight='bold'>{title}</Title>
+            <Title variant="sBold">{title}</Title>
 
             <CoffeeDescription>
-                <Text size='s' weight='normal'>{description}</Text>
+                <Text variant='sRegular'>{description}</Text>
             </CoffeeDescription>
 
             <CoffeeBuyContainer>
-                <Title size="m" weight="bolder">{price.toFixed(2)}</Title><Text size="s" weight="normal"> €</Text>
+                <Title variant="mExtraBold" >{price.toFixed(2)}</Title><Text variant="sRegular"> €</Text>
                 <CoffeeActions>
                 <PlusAndMinusCounter />
                     <button>

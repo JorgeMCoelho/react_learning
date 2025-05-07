@@ -2,11 +2,10 @@ import { ReactNode } from 'react'
 import { TextContainer } from './styles'
 
 interface TextProps {
-    size?: 'xs' | 's' | 'm' | 'l'
-    weight?: 'normal' | 'bold'
+    variant?: 'xsBold' | 'sRegular' | 'mRegular' | 'mBold' | 'lRegular' | 'lBold'
     children: ReactNode
 }
 
-export function Text({ size = 'm', weight = 'normal', children }: TextProps){
-    return <TextContainer size ={size} weight={weight}>{children}</TextContainer>
+export function Text({ variant = "sRegular", children }: TextProps){
+    return <TextContainer variant = {variant}>{children}</TextContainer>
 }

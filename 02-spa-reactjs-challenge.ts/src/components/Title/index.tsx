@@ -2,11 +2,10 @@ import { ReactNode } from 'react'
 import { TitleContainer } from './styles'
 
 interface TitleProps {
-    size?: 'xs' | 's' | 'm' | 'l' | 'xl'
-    weight?: 'normal' | 'bold' | 'bolder'
+    variant?: 'xsBold' | 'sBold' | 'mExtraBold' | 'lExtraBold' | 'xlExtraBold'
     children: ReactNode
 }
 
-export function Title({ size = 'm', weight = 'normal', children }: TitleProps){
-    return <TitleContainer size ={size} weight={weight}>{children}</TitleContainer>
+export function Title({ variant = 'mExtraBold', children }: TitleProps){
+    return <TitleContainer variant={variant}>{children}</TitleContainer>
 }

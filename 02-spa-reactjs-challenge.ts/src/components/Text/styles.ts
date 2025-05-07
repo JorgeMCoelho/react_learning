@@ -1,31 +1,43 @@
 import styled, {css} from "styled-components";
 
-export type TextSizeVariant = 'xs' | 's' | 'm' | 'l'
+export type TextVariant = 'xsBold' | 'sRegular' | 'mRegular' | 'mBold' | 'lRegular' | 'lBold'
 
-export type TextWeightVariant = 'normal' | 'bold'
 interface TextContainerProps {
-    size: TextSizeVariant;
-    weight: TextWeightVariant;
+   variant: TextVariant;
 }
 
-const textSizeVariants ={
-    xs: '0.75rem',
-    s: '0.875rem',
-    m: '1rem',
-    l: '1.25rem',
-}
-
-const textWeightVariant = {
-    normal: '400',
-    bold: '600',
-
+const textVariants ={
+    xsBold: { 
+        fontSize:'0.75rem',
+        fontWeight: '600',
+        },
+    sRegular: { 
+        fontSize:'0.85rem',
+        fontWeight: '400',
+        },
+    mRegular: { 
+        fontSize:'1rem',
+        fontWeight: '400',
+        },
+    mBold: { 
+        fontSize: '1rem',
+        fontWeight: '600',
+        },
+    lRegular: { 
+        fontSize:'1.25rem',
+        fontWeight: '400',
+        },
+    lBold: { 
+        fontSize:'1.25rem',
+        fontWeight: '600',
+        },
 }
 
 export const TextContainer = styled.p<TextContainerProps>`
     ${props =>{
         return css`
-            font-size: ${textSizeVariants[props.size]};
-            font-weight: ${textWeightVariant[props.weight]};
+            font-size: ${textVariants[props.variant].fontSize};
+            font-weight: ${textVariants[props.variant].fontWeight};
             line-height: 130%;
             font-family: Roboto, sans-serif;
         `
