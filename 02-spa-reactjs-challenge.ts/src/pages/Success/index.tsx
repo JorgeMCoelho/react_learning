@@ -1,5 +1,6 @@
 import { InfoDetails, ConfirmationDetailsContainer, ConfirmationMessageContainer, IllustrationContainer, SuccessContainer, SuccessWrapper, TextContainer, LocalIcon, TimeIcon, PaymentIcon } from "./styles";
-import { Text } from "../../styles/Text";
+import { Text } from "../../components/Text";
+import { Title } from "../../components/Title";
 import deliverIllustration from '../../assets/DeliverIllustration.svg'
 import { CurrencyDollar, MapPin, Timer } from "phosphor-react";
 
@@ -8,8 +9,8 @@ export function Success() {
         <SuccessWrapper>
             <SuccessContainer>
                 <ConfirmationMessageContainer>
-                    <Text variant="titleL">YEA! Order is Confirmed</Text>
-                    <Text variant="textM">Now just sit back and wait,  your coffee’s on its way!</Text>
+                    <Title variant="lExtraBold">YEA! Order is Confirmed</Title>
+                    <Text variant="lRegular">Now just sit back and wait,  your coffee’s on its way!</Text>
                 </ConfirmationMessageContainer>
                 <ConfirmationDetailsContainer>
                     <InfoDetails>
@@ -17,8 +18,8 @@ export function Success() {
                             <MapPin size={16} weight="fill"/>
                         </LocalIcon>
                         <TextContainer>
-                            <Text variant="textM">Deliver at <strong>2607 Clair Street</strong></Text>
-                            <Text variant="textM">New Cambria, Kansas</Text>
+                            <Text variant="mRegular">Deliver at <strong>2607 Clair Street</strong></Text>
+                            <Text variant="mRegular">New Cambria, Kansas</Text>
                         </TextContainer>
                     </InfoDetails>
                     <InfoDetails>
@@ -26,8 +27,8 @@ export function Success() {
                             <Timer size={16} weight="fill"/>
                         </TimeIcon>
                         <TextContainer>
-                            <Text variant="textM">Estimated Delivery Time</Text>
-                            <Text variant="textM"><strong>20 mins - 30 mins</strong></Text>
+                            <Text variant="mRegular">Estimated Delivery Time</Text>
+                            <Text variant="mRegular"><strong>20 mins - 30 mins</strong></Text>
                         </TextContainer>
                     </InfoDetails>
                     <InfoDetails>
@@ -35,8 +36,8 @@ export function Success() {
                             <CurrencyDollar size={16} weight="fill" />
                         </PaymentIcon>
                         <TextContainer>
-                            <Text variant="textM">Payment on delivery</Text>
-                            <Text variant="textM"><strong>Credit Card</strong></Text>
+                            <Text variant="mRegular">Payment on delivery</Text>
+                            <Text variant="mRegular"><strong>Credit Card</strong></Text>
                         </TextContainer>
                     </InfoDetails>
                 </ConfirmationDetailsContainer>

@@ -1,5 +1,4 @@
 export const defaultTheme = {
-    
     colors: {
         "white": "#FFFFFF",
 
@@ -21,85 +20,4 @@ export const defaultTheme = {
         "purple": "#8047F8",
         "purple-light": "#EBE5F9",
     },
-
-    typography: {
-        fonts: {
-            primary: "'Baloo 2'",
-            secondary: "Roboto, sans-serif",
-        },
-        titleXl:{
-            size:"3rem",
-            lineHeight:"130%",
-            weight: "800",
-            family: "primary",
-        },
-        titleL:{
-            size:"2rem",
-            lineHeight:"130%",
-            weight:"800",
-            family:"primary",
-        },
-        titleM:{
-            size:"1.5rem",
-            lineHeight:"130%",
-            weight:"800",
-            family:"primary",
-        },
-        titleS:{
-            size:"1.25",
-            lineHeight:"130%",
-            weight:"700",
-            family:"primary",
-        },
-        titleXs:{
-            size:"1.125rem",
-            lineHeight:"130%",
-            weight:"700",
-            family:"primary",
-        },
-        textL:{
-            size:"1.25rem",
-            lineHeight:"130%",
-            weight:"400",
-            family:"secondary",
-        },
-        textM:{
-            size:"1rem",
-            lineHeight:"130%",
-            weight:"400",
-            family:"secondary",
-        },
-        textS:{
-            size:"0.875rem",
-            lineHeight:"130%",
-            weight:"400",
-            family:"secondary",
-        },
-        textXs:{
-            size:"0.75rem",
-            lineHeight:"130%",
-            weight:"600",
-            family:"secondary",
-        },
-        tag:{
-            size:"0.625rem",
-            lineHeight:"130%",
-            weight:"600",
-            family:"secondary",
-        },
-        buttonG:{
-            size:"0.875rem",
-            lineHeight:"160%",
-            weight:"600",
-            family:"secondary",
-        },
-        buttonM:{
-            size:"0.75rem",
-            lineHeight:"160%",
-            weight:"500",
-            family:"secondary",
-        }
-            
-        
-    }
-} as const;
+}

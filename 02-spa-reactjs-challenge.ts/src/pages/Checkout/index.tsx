@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Text } from "../../styles/Text";
+import { Text } from "../../components/Text";
+import { Title } from "../../components/Title";
 import { CoffeeCardCart } from "./components/CoffeeCardCart";
 import { AddressForm, AdressInfoContainer, AdressInputAditionalInfo, AdressInputCity, AdressInputNeighborhood, AdressInputNumber, AdressInputState, AdressInputStreet, AdressInputZipCode, CheckoutCompleteOrderContainer, CheckoutWrapper, PaymentInfoContainer, PaymentMethodDiv, PaymentMethodNonSelectedButton, PaymentMethodSelectedButton, SelectedCoffeesContainer, SelectedCoffeesTotals, SubmitOrderButton } from "./styles";
 
@@ -38,7 +39,7 @@ export function Checkout(){
     return(
         <CheckoutWrapper>
             <div>
-                <Text variant="titleXs">Complete your Order</Text>
+                <Title variant="xsBold">Complete your Order</Title>
                 <CheckoutCompleteOrderContainer>
 
                     <AdressInfoContainer>
@@ -47,8 +48,8 @@ export function Checkout(){
                                 <MapPinLine size={22} />
                             </div>
                             <div>
-                                <Text variant="textM"> Delivery Address</Text>
-                                <Text variant="textS">Enter the address where you want to receive your order</Text>
+                                <Text variant="mRegular"> Delivery Address</Text>
+                                <Text variant="sRegular">Enter the address where you want to receive your order</Text>
                             </div>
                         </header>
 
@@ -68,8 +69,8 @@ export function Checkout(){
                                 <CurrencyEur size={22} />
                             </div>
                             <div>
-                                <Text variant="textM">Payment</Text>
-                                <Text variant="textS">Payment is made upon delivery. Choose the payment method you prefer</Text>
+                                <Text variant="mRegular">Payment</Text>
+                                <Text variant="sRegular">Payment is made upon delivery. Choose the payment method you prefer</Text>
                             </div>
                         </header>
                         
@@ -93,23 +94,23 @@ export function Checkout(){
                 </CheckoutCompleteOrderContainer>
             </div>
             <div>
-                 <Text variant="titleXs">Selected Coffees</Text>
+                 <Title variant="xsBold">Selected Coffees</Title>
                  <SelectedCoffeesContainer>
                     <CoffeeCardCart />
                     <CoffeeCardCart />
                     <SelectedCoffeesTotals>
-                        <Text variant="textS">Subtotal</Text>
-                        <Text variant="textM">29,00€</Text>
+                        <Text variant="sRegular">Subtotal</Text>
+                        <Text variant="mRegular">29,00€</Text>
                     </SelectedCoffeesTotals>
                     <SelectedCoffeesTotals>
-                        <Text variant="textS">Delivery fee</Text>
-                        <Text variant="textM">3,00€</Text>
+                        <Text variant="sRegular">Delivery fee</Text>
+                        <Text variant="mRegular">3,00€</Text>
                     </SelectedCoffeesTotals>
                     <SelectedCoffeesTotals>
-                        <Text variant="textL">Order Total</Text>
-                        <Text variant="textL">32,00€</Text>
+                        <Text variant="lBold">Order Total</Text>
+                        <Text variant="lBold">32,00€</Text>
                     </SelectedCoffeesTotals>
-                    <SubmitOrderButton>Submit Order</SubmitOrderButton>
+                    <SubmitOrderButton>Submit Order</SubmitOrderButton> 
                  </SelectedCoffeesContainer>
             </div>
         </CheckoutWrapper>

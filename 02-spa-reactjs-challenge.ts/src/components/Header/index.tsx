@@ -3,7 +3,7 @@ import { MapPin, ShoppingCart } from 'phosphor-react'
 
 import logo from '../../assets/logo.svg'
 import { useNavigate } from 'react-router-dom';
-import { Text } from '../../styles/Text';
+import { Text } from '../../components/Text';
 
 interface ShoppingCartTemp {
     id: number;
@@ -30,13 +30,13 @@ export function Header() {
                 <nav>
                     <LocationButton>
                         <MapPin size={22} weight='fill' />
-                        New Cambria, KS
+                        <Text variant='sRegular'>New Cambria, KS</Text>
                     </LocationButton>
                     <ShoppingCartButton onClick={() => navigate("/checkout")}>
                         <ShoppingCart size={22} weight='fill' />
                             {shoppingCart.productQuantity > 0 && (
                                 <CartCounter>
-                                    <Text variant="textS">{shoppingCart.productQuantity}</Text>
+                                    <Text variant="xsBold">{shoppingCart.productQuantity}</Text>
                                 </CartCounter>
                             )}
 
