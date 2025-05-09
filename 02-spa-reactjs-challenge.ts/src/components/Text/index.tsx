@@ -2,7 +2,7 @@ import { ReactNode } from 'react'
 import { TextContainer } from './styles'
 
 interface TextProps {
-    variant?: 'xsBold' | 'sRegular' | 'mRegular' | 'mBold' | 'lRegular' | 'lBold'
+    variant?: 'xsBold' | 'sRegular' | 'mRegular' | 'mBold' | 'lRegular' | 'lBold' | 'tag'
     children: ReactNode
 }
 

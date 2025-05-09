@@ -42,7 +42,12 @@ export const CoffeeBuyContainer = styled.div`
     align-items: center;
     justify-content: center;
     gap: 1.437rem;
-
+`
+export const CoffeePrice = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.25rem;
 `
 
 export const CoffeeActions = styled.div`

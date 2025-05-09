@@ -1,6 +1,6 @@
 import styled, {css} from "styled-components";
 
-export type TextVariant = 'xsBold' | 'sRegular' | 'mRegular' | 'mBold' | 'lRegular' | 'lBold'
+export type TextVariant = 'xsBold' | 'sRegular' | 'mRegular' | 'mBold' | 'lRegular' | 'lBold' | 'tag'
 
 interface TextContainerProps {
    variant: TextVariant;
@@ -31,6 +31,10 @@ const textVariants ={
         fontSize:'1.25rem',
         fontWeight: '600',
         },
+    tag: {
+        fontSize: '0.625rem',
+        fontWeight: '600',
+    }
 }
 
 export const TextContainer = styled.p<TextContainerProps>`

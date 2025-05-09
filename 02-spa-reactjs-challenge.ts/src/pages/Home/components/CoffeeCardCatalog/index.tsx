@@ -1,4 +1,4 @@
-import { CoffeeActions, CoffeeBuyContainer, CoffeeCardWrapper, CoffeeCategory, CoffeeCategoryWrapper, CoffeeDescription } from './styles'
+import { CoffeeActions, CoffeeBuyContainer, CoffeeCardWrapper, CoffeeCategory, CoffeeCategoryWrapper, CoffeeDescription, CoffeePrice } from './styles'
 import { ShoppingCart } from "phosphor-react"
 import { Text } from '../../../../components/Text'
 import { Title } from '../../../../components/Title'
@@ -22,7 +22,7 @@ export function CoffeeCardCatalog({ image, title, description, price, category }
                 {category.map(category => {
                     return (            
                         <CoffeeCategory>
-                        <Text >{category}</Text>
+                        <Text variant='tag' >{category}</Text>
                         </CoffeeCategory>
                     )
                 })}
@@ -35,7 +35,10 @@ export function CoffeeCardCatalog({ image, title, description, price, category }
             </CoffeeDescription>
 
             <CoffeeBuyContainer>
-                <Title variant="mExtraBold" >{price.toFixed(2)}</Title><Text variant="sRegular"> €</Text>
+                <CoffeePrice>
+                    <Title variant="mExtraBold" >{price.toFixed(2)}</Title>
+                    <Text variant="sRegular"> €</Text>
+                </CoffeePrice>
                 <CoffeeActions>
                     <PlusAndMinusCounter />
                     <button>
