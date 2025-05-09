@@ -6,6 +6,7 @@ export const HomeContainer = styled.main`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 9.8125rem;
     `
 export const IntroContainerBackground = styled.div`
 

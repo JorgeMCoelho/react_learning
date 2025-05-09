@@ -30,7 +30,7 @@ export function Home() {
             title: 'Traditional Espresso',
             description: 'The traditional coffee made with hot water and ground beans.',
             price: 1.50,
-            category: 'Traditional',
+            category: ['Traditional'], 
         },
         {
             id: 2,
@@ -38,7 +38,7 @@ export function Home() {
             title: 'American Coffee',
             description: 'Diluted espresso, less intense than the traditional one.',
             price: 1.50,
-            category:'Traditional',
+            category: ['Traditional'], 
         },
         {
             id: 3,
@@ -46,7 +46,7 @@ export function Home() {
             title: 'Creamy Coffee',
             description: 'Traditional espresso with creamy foam.',
             price: 1.50,
-            category:'Traditional',
+            category: ['Traditional'], 
         },
         {
             id: 4,
@@ -54,7 +54,7 @@ export function Home() {
             title: 'Iced Coffee',
             description: 'A drink made with espresso and ice cubes.',
             price: 1.50,
-            category: 'Traditional',
+            category: ['Traditional', 'Iced'], 
         },
         {
             id: 5,
@@ -62,7 +62,7 @@ export function Home() {
             title: 'Coffee with Milk',
             description: 'Half and half of traditional espresso with steamed milk.',
             price: 1.50,
-            category: 'Traditional',
+            category: ['Traditional', 'With Milk'], 
         },
         {
             id: 6,
@@ -70,7 +70,7 @@ export function Home() {
             title: 'Latte',
             description: 'A shot of espresso with double the milk and creamy foam.',
             price: 1.50,
-            category: 'Traditional',
+            category: ['Traditional', 'With Milk'], 
         },
         {
             id: 7,
@@ -78,7 +78,7 @@ export function Home() {
             title: 'Cappuccino',
             description: 'A cinnamon drink made with equal parts coffee, milk, and foam.',
             price: 1.50,
-            category: 'Traditional',
+            category: ['Traditional', 'With Milk'], 
         },
         {
             id: 8,
@@ -86,7 +86,7 @@ export function Home() {
             title: 'Macchiato',
             description: 'Espresso mixed with a little hot milk and foam.',
             price: 1.50,
-            category: 'Traditional',
+            category: ['Traditional', 'With Milk'], 
         },
         {
             id: 9,
@@ -94,7 +94,7 @@ export function Home() {
             title: 'Mocaccino',
             description: 'Espresso with chocolate syrup, a little milk, and foam.',
             price: 1.50,
-            category: 'Traditional',
+            category: ['Traditional', 'With Milk'], 
         },
         {
             id: 10,
@@ -102,7 +102,7 @@ export function Home() {
             title: 'Hot Chocolate',
             description: 'A drink made with chocolate dissolved in hot milk and coffee.',
             price: 1.50,
-            category: 'Traditional',
+            category: ['Traditional', 'With Milk'], 
         },
         {
             id: 11,
@@ -110,7 +110,7 @@ export function Home() {
             title: 'Cuban Coffee',
             description: 'Iced espresso drink with rum, cream, and mint.',
             price: 1.50,
-            category: 'Traditional',
+            category: ['Traditional', 'With Alcohol', 'Iced'], 
         },
         {
             id: 12,
@@ -118,7 +118,7 @@ export function Home() {
             title: 'Hawaiian Coffee',
             description: 'Sweetened drink made with coffee and coconut milk.',
             price: 1.50,
-            category: 'Traditional',
+            category: ['Special'], 
         },
         {
             id: 13,
@@ -126,7 +126,7 @@ export function Home() {
             title: 'Arabian Coffee',
             description: 'Drink made with Arabica coffee beans and spices.',
             price: 1.50,
-            category: 'Traditional',
+            category: ['Special'], 
         },
         {
             id: 14,
@@ -134,7 +134,7 @@ export function Home() {
             title: 'Irish Coffee',
             description: 'Coffee-based drink with Irish whiskey, sugar, and whipped cream.',
             price: 1.50,
-            category: 'Traditional',
+            category: ['Traditional', 'With Alcohol'], 
         }
     ];
 

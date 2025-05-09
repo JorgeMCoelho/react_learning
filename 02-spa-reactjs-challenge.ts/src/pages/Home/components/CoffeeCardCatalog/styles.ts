@@ -15,6 +15,11 @@ export const CoffeeCardWrapper = styled.div`
         margin-top: -20px;
     }
 `
+export const CoffeeCategoryWrapper = styled.div`
+    display: flex;
+    flex-direction: row;
+    gap: 0.25rem;
+`
 
 export const CoffeeCategory = styled.div`
     margin: 0.75rem 0 1rem 0;
