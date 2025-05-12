@@ -60,29 +60,7 @@ export const CoffeeActions = styled.div`
 
 
     button {
-        background-color: ${props => props.theme.colors['purple-dark']};
-        padding: 0.5rem;
-
-        height: 2.375rem;
-        width: 2.375rem;
-        border-radius: 6px;
-        border: 3px solid transparent;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        &:hover {
-            background-color: ${(props) => props.theme.colors['purple']};
-        }
-
-        svg{
-            color: ${props => props.theme.colors['base-card']};
-            
-            &:hover {
-                color: ${(props) => props.theme.colors['base-card']};
-            }
-        }
+       
 
 
     }
@@ -97,5 +75,30 @@ export const CoffeActionsPlusAndMinus = styled.div`
     gap: 0.25rem;
 
     border-radius: 6px;
-    
 ` 
+
+export const CoffeeAddToCartButton = styled.button`
+    background-color: ${props => props.theme.colors['purple-dark']};
+    padding: 0.5rem;
+
+    height: 2.375rem;
+    width: 2.375rem;
+    border-radius: 6px;
+    border: 3px solid transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+        background-color: ${(props) => props.theme.colors['purple']};
+    }
+
+    svg{
+         color: ${props => props.theme.colors['base-card']};
+            
+        &:hover {
+            color: ${(props) => props.theme.colors['base-card']};
+        }
+    }
+`
