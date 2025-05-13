@@ -18,7 +18,6 @@ import coffeeCuban from '../../../../assets/CoffeeCuban.png'
 import coffeeHawaiian from '../../../../assets/CoffeeHawaiian.png'
 import coffeeArabian from '../../../../assets/CoffeeArabian.png'
 import coffeeIrish from '../../../../assets/CoffeeIrish.png'
-import { useState } from 'react'
 
 export interface CoffeeCardCatalogType{
     id: number;
@@ -32,7 +31,7 @@ export interface CoffeeCardCatalogType{
 
 export function CoffeeCardCatalog() {
 
-    const [coffeeCatalogRight, setCoffeeCatalog] = useState<CoffeeCardCatalogType[]>([
+    const coffeeCatalog = ([
         {
             id: 1,
             image: coffee, 
@@ -146,7 +145,7 @@ export function CoffeeCardCatalog() {
             category: ['Traditional', 'With Alcohol'], 
         }
     ]);
-    return coffeeCatalogRight.map((coffeeItem) => (
+    return coffeeCatalog.map((coffeeItem) => (
         <CoffeeCardWrapper key={coffeeItem.id}>
             <img src={coffeeItem.image} alt={coffeeItem.title} />
             <CoffeeCategoryWrapper>
